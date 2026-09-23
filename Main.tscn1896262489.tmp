@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dccw1vduwxhko"]
+
+[ext_resource type="PackedScene" uid="uid://cb76138h5aq4m" path="res://Player.tscn" id="1_glv2v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r0du0"]
+
+[sub_resource type="Sky" id="Sky_glv2v"]
+sky_material = SubResource("ProceduralSkyMaterial_r0du0")
+
+[sub_resource type="Environment" id="Environment_glv2v"]
+background_mode = 2
+sky = SubResource("Sky_glv2v")
+
+[node name="Root" type="Node3D" unique_id=1121203160]
+
+[node name="env" type="Node3D" parent="." unique_id=888805762]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=2028779112]
+transform = Transform3D(1, 0, 0, 0, 0.87146914, 0.4904505, 0, -0.4904505, 0.87146914, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1438385980]
+environment = SubResource("Environment_glv2v")
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=1072340961]
+size = Vector3(25, 0.1, 25)
+
+[node name="player" parent="." unique_id=1374814702 instance=ExtResource("1_glv2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17768764, 0, 0.07654047)
+headbob = true
+lookSens = 0.003
+canMove = true
+canJump = true
+canSprint = true
+jumpVel = 5.0
+speed = 5.0
+speedSprint = 7.0
+groundAccel = 14.0
+groundDecel = 10.0
+groundFriction = 6.0
+airCap = 1.85
+airAccel = 800.0
+airMoveSpeed = 500.0

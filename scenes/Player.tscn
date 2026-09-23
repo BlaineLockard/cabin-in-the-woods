@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cb76138h5aq4m"]
+
+[ext_resource type="Script" uid="uid://gxxnoal6did2" path="res://scripts/3DCharacterController.gd" id="1_kne1u"]
+[ext_resource type="PackedScene" uid="uid://cnu55brxs15di" path="res://scenes/flashlight.tscn" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://ctv0gxysy860c" path="res://scripts/player_hud.gd" id="3_e80uo"]
+[ext_resource type="PackedScene" uid="uid://befp8s4rc3u6i" path="res://scenes/player_hud.tscn" id="3_lbjtu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0rwas"]
+
+[node name="player" type="CharacterBody3D" unique_id=1374814702]
+script = ExtResource("1_kne1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=459405521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99959636, 0)
+shape = SubResource("CapsuleShape3D_0rwas")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="head" type="Node3D" parent="." unique_id=1284674313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6186491, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head" unique_id=1986557925]
+cull_mask = 1048573
+
+[node name="Flashlight" parent="head/Camera3D" unique_id=1225313828 instance=ExtResource("2_kpjcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47440428, -0.29796803, -0.20320678)
+
+[node name="model" type="Node3D" parent="." unique_id=719256193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99959636, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="model" unique_id=1612198053]
+mesh = SubResource("CapsuleMesh_0rwas")
+
+[node name="PlayerHud" parent="." unique_id=1207591666 instance=ExtResource("3_lbjtu")]
+script = ExtResource("3_e80uo")

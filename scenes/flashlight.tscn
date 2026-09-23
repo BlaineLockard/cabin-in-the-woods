@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cnu55brxs15di"]
+
+[ext_resource type="Script" uid="uid://bikrkx11wakns" path="res://scripts/flashlight.gd" id="1_nnxok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnxok"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0kh7f"]
+material = SubResource("StandardMaterial3D_nnxok")
+size = Vector3(0.095, 0.095, 0.485)
+
+[node name="Flashlight" type="Node3D" unique_id=918981566]
+script = ExtResource("1_nnxok")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1619402227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0007251501, 2.9802322e-08, 0.0017858446)
+mesh = SubResource("BoxMesh_0kh7f")
+
+[node name="lightSource" type="SpotLight3D" parent="." unique_id=871937318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24693193)
+visible = false
+light_energy = 3.016
+shadow_enabled = true
+spot_range = 100.0
+spot_angle = 71.0
+spot_angle_attenuation = 1.8660663
