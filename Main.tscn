@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cb76138h5aq4m" path="res://scenes/Player.tscn" id="1_glv2v"]
 [ext_resource type="Texture2D" uid="uid://yhmq6odv1bwr" path="res://assets/textures/icon.svg" id="1_uu6xs"]
+[ext_resource type="ArrayMesh" uid="uid://qsov8wi283ok" path="res://assets/models/Desk.obj" id="2_r0du0"]
+[ext_resource type="ArrayMesh" uid="uid://c51xda44jo4uv" path="res://assets/models/Office chair.obj" id="4_cm0pq"]
+[ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://eb_metal_shelf_01.obj" id="5_fos0i"]
 
 [sub_resource type="Environment" id="Environment_glv2v"]
 background_mode = 1
@@ -9,6 +12,12 @@ background_energy_multiplier = 4.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6xs"]
 albedo_texture = ExtResource("1_uu6xs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucjdu"]
+size = Vector3(104.17432, 81.090324, 37.249474)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qh475"]
+size = Vector3(535.21497, 60.58231, 196.91144)
 
 [node name="Root" type="Node3D" unique_id=1121203160]
 
@@ -29,9 +38,42 @@ transform = Transform3D(1, 0, 0, 0, 0.2979898, -0.95456886, 0, 0.95456886, 0.297
 environment = SubResource("Environment_glv2v")
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=1072340961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.493511, 0, 56.440155)
 material_override = SubResource("StandardMaterial3D_uu6xs")
 use_collision = true
-size = Vector3(25, 0.1, 25)
+size = Vector3(332.0597, 0.1, 166.78937)
+
+[node name="OfficeChair" type="MeshInstance3D" parent="." unique_id=1698471665]
+transform = Transform3D(-0.001605421, 0, 1.2863618e-05, 0, 0.0014409574, 0, -1.5468908e-05, 0, -0.0013350344, 0.16671395, 0.051852614, -1.0402112)
+mesh = ExtResource("4_cm0pq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OfficeChair" unique_id=603383122]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeChair/StaticBody3D" unique_id=630671038]
+transform = Transform3D(0.999921, 0, 3.3527613e-08, 0, 1.9589249, 0, -1.0346994e-06, 0, 0.9999181, 4.2636757, 477.44864, -3.6795654)
+shape = SubResource("BoxShape3D_ucjdu")
+
+[node name="Desk" type="MeshInstance3D" parent="." unique_id=1886836]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -0.53775084, 0.05297208, -2.0341082)
+mesh = ExtResource("2_r0du0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk" unique_id=928366755]
+transform = Transform3D(1, 0, 0, 0, 2.3042521, 0, 0, 0, 1, 0, 0, 0)
+disable_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D" unique_id=165618410]
+transform = Transform3D(0.86045456, 0, 0, 0, 1.5329224, 0, 0, 0, 1.0551207, 142.04202, 46.487022, 1.489624)
+shape = SubResource("BoxShape3D_qh475")
+
+[node name="Shelf" type="MeshInstance3D" parent="." unique_id=573110669]
+transform = Transform3D(0.06423903, 0, 0, 0, 0.04440895, 0, 0, 0, 0.035, -0.4868698, 0.039644003, 4.72408)
+mesh = ExtResource("5_fos0i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shelf" unique_id=1550217657]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf/StaticBody3D" unique_id=1089974978]
+transform = Transform3D(0.99992114, 0, 3.3527613e-08, 0, 1.958926, 0, -1.0346994e-06, 0, 0.99991816, 0.50643635, 83.1457, 19.948578)
+shape = SubResource("BoxShape3D_ucjdu")
 
 [node name="player" parent="." unique_id=1374814702 instance=ExtResource("1_glv2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17768764, 0, 0.07654047)
