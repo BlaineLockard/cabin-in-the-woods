@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bny2asev8e1x3"]
+
+[ext_resource type="Texture2D" uid="uid://cwoipi1skwei6" path="res://assets/textures/floor/Concrete.jpg" id="1_cgngl"]
+[ext_resource type="Texture2D" uid="uid://djohf6wi08nsl" path="res://assets/textures/floor/Concrete_n.jpg" id="2_wd3ws"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p51ki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v70fy"]
+albedo_texture = ExtResource("1_cgngl")
+normal_enabled = true
+normal_texture = ExtResource("2_wd3ws")
+uv1_scale = Vector3(25, 25, 25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_qn07e"]
+material = SubResource("StandardMaterial3D_v70fy")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dgmes"]
+size = Vector3(100, 0.001, 100)
+
+[node name="Floor" type="StaticBody3D" unique_id=811895826]
+physics_material_override = SubResource("PhysicsMaterial_p51ki")
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=53430475]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.096613884, 0.037531853, 0.035250187)
+mesh = SubResource("QuadMesh_qn07e")
+
+[node name="collisionShape" type="CollisionShape3D" parent="." unique_id=870393989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041614264, -0.12637329)
+shape = SubResource("BoxShape3D_dgmes")

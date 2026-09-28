@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dccw1vduwxhko"]
 
 [ext_resource type="PackedScene" uid="uid://cb76138h5aq4m" path="res://scenes/Player.tscn" id="1_glv2v"]
-[ext_resource type="Texture2D" uid="uid://yhmq6odv1bwr" path="res://assets/textures/icon.svg" id="1_uu6xs"]
 [ext_resource type="ArrayMesh" uid="uid://qsov8wi283ok" path="res://assets/models/Desk.obj" id="2_r0du0"]
 [ext_resource type="ArrayMesh" uid="uid://c51xda44jo4uv" path="res://assets/models/Office chair.obj" id="4_cm0pq"]
 [ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="5_fos0i"]
+[ext_resource type="PackedScene" uid="uid://bny2asev8e1x3" path="res://floor.tscn" id="5_lgr22"]
 [ext_resource type="Script" uid="uid://bw2oskknreyof" path="res://temp files/example_enemy_that_reacts_to_gun.gd" id="6_lgr22"]
 [ext_resource type="Texture2D" uid="uid://c3sp7aalg5gd8" path="res://temp files/chesnuts.jpg" id="7_trn2v"]
 
@@ -13,12 +13,9 @@ background_mode = 1
 background_energy_multiplier = 4.9
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_adpiu"]
-vertices = PackedVector3Array(-0.023361206, 0.45, 3.7954712, -0.023361206, 0.45, 0.2954712, -0.5233612, 0.45, 0.2954712, -4.273361, 0.45, 3.7954712, -1.7733612, 0.45, -1.2045288, -2.2733612, 0.45, 139.04547, -4.273361, 0.45, 7.045471, -4.773361, 0.45, 6.545471, -171.77336, 0.45, -26.204529, -171.77336, 0.45, 139.04547, -4.773361, 0.45, 4.295471, -1.7733612, 0.45, -2.9545288, -1.2733612, 0.45, -3.4545288, 0.2266388, 0.45, -3.4545288, 0.2266388, 0.45, -26.204529, -2.2733612, 0.45, 7.045471, 0.7266388, 0.45, 0.2954712, 3.2266388, 0.45, 3.7954712, 3.7266388, 0.45, 6.545471, 3.2266388, 0.45, 7.045471, 1.2266388, 0.45, 139.04547, 158.72664, 0.45, 139.04547, 158.72664, 0.45, -26.204529, 3.7266388, 0.45, 4.295471, 2.2266388, 0.45, -1.2045288, 2.2266388, 0.45, -2.9545288, 1.7266388, 0.45, -3.4545288, 1.2266388, 0.45, 7.045471)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 4), PackedInt32Array(4, 0, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(3, 10, 4), PackedInt32Array(4, 10, 11), PackedInt32Array(8, 10, 7), PackedInt32Array(14, 13, 12), PackedInt32Array(14, 12, 11), PackedInt32Array(11, 10, 14), PackedInt32Array(14, 10, 8), PackedInt32Array(6, 15, 5), PackedInt32Array(1, 16, 0), PackedInt32Array(0, 16, 17), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(21, 18, 22), PackedInt32Array(17, 16, 23), PackedInt32Array(23, 16, 24), PackedInt32Array(18, 23, 22), PackedInt32Array(23, 24, 25), PackedInt32Array(26, 13, 14), PackedInt32Array(25, 26, 14), PackedInt32Array(25, 14, 23), PackedInt32Array(23, 14, 22), PackedInt32Array(20, 27, 19), PackedInt32Array(15, 27, 5), PackedInt32Array(5, 27, 20)]
+vertices = PackedVector3Array(0.25, 0.5375297, 3.8736267, 0.25, 0.5375297, 0.3736267, -1.75, 0.5375297, -1.1263733, -4.25, 0.5375297, 3.8736267, -49.25, 0.5375297, 5.3736267, -1.75, 0.5375297, -2.8763733, 0.25, 0.5375297, -49.376373, -49.25, 0.5375297, -49.376373, -4.75, 0.5375297, 5.3736267, -1.25, 0.5375297, -3.3763733, 0.25, 0.5375297, -3.3763733, 1.75, 0.5375297, -3.3763733, 2.25, 0.5375297, -2.1263733, 49.25, 0.5375297, -2.1263733, 49.25, 0.5375297, -49.376373, 3.25, 0.5375297, 3.8736267, 2.25, 0.5375297, -1.1263733, 3.75, 0.5375297, 5.3736267, 49.25, 0.5375297, 5.3736267, -2.25, 0.5375297, 49.373627, -2.25, 0.5375297, 6.8736267, -4.25, 0.5375297, 6.8736267, -49.25, 0.5375297, 49.373627, 3.25, 0.5375297, 6.8736267, 1.25, 0.5375297, 6.8736267, 1.25, 0.5375297, 49.373627, 49.25, 0.5375297, 49.373627)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(5, 2, 3), PackedInt32Array(3, 8, 4), PackedInt32Array(6, 10, 9), PackedInt32Array(6, 9, 5), PackedInt32Array(11, 10, 6), PackedInt32Array(11, 6, 12), PackedInt32Array(12, 6, 13), PackedInt32Array(13, 6, 14), PackedInt32Array(0, 1, 15), PackedInt32Array(15, 1, 16), PackedInt32Array(16, 12, 15), PackedInt32Array(15, 12, 17), PackedInt32Array(17, 12, 18), PackedInt32Array(18, 12, 13), PackedInt32Array(21, 20, 19), PackedInt32Array(21, 19, 8), PackedInt32Array(8, 19, 4), PackedInt32Array(4, 19, 22), PackedInt32Array(25, 24, 23), PackedInt32Array(23, 17, 25), PackedInt32Array(25, 17, 18), PackedInt32Array(25, 18, 26), PackedInt32Array(20, 24, 19), PackedInt32Array(19, 24, 25)]
 agent_radius = 0.7
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6xs"]
-albedo_texture = ExtResource("1_uu6xs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ucjdu"]
 size = Vector3(104.17432, 81.090324, 37.249474)
@@ -53,12 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17768764, 0, 0.07654047)
 [node name="NavRegion" type="NavigationRegion3D" parent="." unique_id=712139461]
 navigation_mesh = SubResource("NavigationMesh_adpiu")
 
-[node name="floor" type="CSGBox3D" parent="NavRegion" unique_id=1072340961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.493511, 0, 56.440155)
-material_override = SubResource("StandardMaterial3D_uu6xs")
-use_collision = true
-size = Vector3(332.0597, 0.1, 166.78937)
-
 [node name="OfficeChair" type="MeshInstance3D" parent="NavRegion" unique_id=1698471665]
 transform = Transform3D(-0.001605421, 0, 1.2863618e-05, 0, 0.0014409574, 0, -1.5468908e-05, 0, -0.0013350344, 0.16671395, 0.051852614, -1.0402112)
 mesh = ExtResource("4_cm0pq")
@@ -90,6 +81,8 @@ mesh = ExtResource("5_fos0i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion/Shelf/StaticBody3D" unique_id=1089974978]
 transform = Transform3D(0.99992114, 0, 3.3527613e-08, 0, 1.958926, 0, -1.0346994e-06, 0, 0.99991816, 0.50643635, 83.1457, 19.948578)
 shape = SubResource("BoxShape3D_ucjdu")
+
+[node name="Floor" parent="NavRegion" unique_id=811895826 instance=ExtResource("5_lgr22")]
 
 [node name="Example enemy that reacts to gun" type="Node3D" parent="." unique_id=811180664 groups=["enemies"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.17768764, 1.0745363, -5.921221)
