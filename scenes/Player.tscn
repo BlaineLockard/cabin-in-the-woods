@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnu55brxs15di" path="res://scenes/flashlight.tscn" id="2_kpjcp"]
 [ext_resource type="Script" uid="uid://ctv0gxysy860c" path="res://scripts/player_hud.gd" id="3_e80uo"]
 [ext_resource type="PackedScene" uid="uid://befp8s4rc3u6i" path="res://scenes/player_hud.tscn" id="3_lbjtu"]
+[ext_resource type="PackedScene" uid="uid://c842hd1dk4cha" path="res://scenes/weapon.tscn" id="3_qu4a1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 
@@ -25,6 +26,9 @@ cull_mask = 1048573
 
 [node name="Flashlight" parent="head/Camera3D" unique_id=1225313828 instance=ExtResource("2_kpjcp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47440428, -0.29796803, -0.20320678)
+
+[node name="Weapon" parent="head/Camera3D" unique_id=1213850990 instance=ExtResource("3_qu4a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474, -0.298, -0.203)
 
 [node name="model" type="Node3D" parent="." unique_id=719256193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99959636, 0)
