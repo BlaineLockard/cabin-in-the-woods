@@ -7,6 +7,8 @@
 [ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://bw2oskknreyof" path="res://temp files/example_enemy_that_reacts_to_gun.gd" id="6_lgr22"]
 [ext_resource type="Texture2D" uid="uid://c3sp7aalg5gd8" path="res://temp files/chesnuts.jpg" id="7_trn2v"]
+[ext_resource type="ArrayMesh" uid="uid://de84kb8x0kea5" path="res://assets/models/Forklift.obj" id="8_trn2v"]
+[ext_resource type="ArrayMesh" uid="uid://3xouakc0u15b" path="res://assets/models/17370_Power_belt_conveyor_v1.obj" id="9_03owx"]
 
 [sub_resource type="Environment" id="Environment_glv2v"]
 background_mode = 1
@@ -26,6 +28,16 @@ size = Vector3(104.17432, 81.090324, 37.249474)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qh475"]
 size = Vector3(535.21497, 60.58231, 196.91144)
 
+[sub_resource type="BoxMesh" id="BoxMesh_87cpq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87cpq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_si2nl"]
+size = Vector3(536.7488, 525.9797, 264.2113)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhdyr"]
+size = Vector3(584.11017, 274.25052, 160.11374)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37v28"]
 albedo_texture = ExtResource("7_trn2v")
 
@@ -43,6 +55,9 @@ spot_angle = 62.842216
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=2028779112]
 transform = Transform3D(1, 0, 0, 0, 0.2979898, -0.95456886, 0, 0.95456886, 0.2979898, 0, 0, 0)
+
+[node name="THE SUN (temp)" type="DirectionalLight3D" parent="env" unique_id=1268182148]
+transform = Transform3D(1, 0, 0, 0, -0.1824227, 0.98322016, 0, -0.98322016, -0.1824227, 0, 72.99162, 55.173756)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1438385980]
 environment = SubResource("Environment_glv2v")
@@ -82,7 +97,7 @@ transform = Transform3D(0.86045456, 0, 0, 0, 1.5329224, 0, 0, 0, 1.0551207, 142.
 shape = SubResource("BoxShape3D_qh475")
 
 [node name="Shelf" type="MeshInstance3D" parent="NavRegion" unique_id=573110669]
-transform = Transform3D(0.06423903, 0, 0, 0, 0.04440895, 0, 0, 0, 0.035, -0.4868698, 0.039644003, 4.72408)
+transform = Transform3D(0.06423903, 0, 0, 0, 0.04440895, 0, 0, 0, 0.035, -0.4868698, 0.039644003, 4.9827166)
 mesh = ExtResource("5_fos0i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavRegion/Shelf" unique_id=1550217657]
@@ -90,6 +105,62 @@ mesh = ExtResource("5_fos0i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion/Shelf/StaticBody3D" unique_id=1089974978]
 transform = Transform3D(0.99992114, 0, 3.3527613e-08, 0, 1.958926, 0, -1.0346994e-06, 0, 0.99991816, 0.50643635, 83.1457, 19.948578)
 shape = SubResource("BoxShape3D_ucjdu")
+
+[node name="Wall 1" type="StaticBody3D" parent="." unique_id=1703582663]
+transform = Transform3D(337.10132, 0, 0, 0, 58.724976, 0, 0, 0, 1, -8.082859, 27.487785, -26.263594)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall 1" unique_id=1703240082]
+mesh = SubResource("BoxMesh_87cpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 1" unique_id=1835682479]
+shape = SubResource("BoxShape3D_87cpq")
+
+[node name="Wall 2" type="StaticBody3D" parent="." unique_id=2128891442]
+transform = Transform3D(337.10132, 0, 0, 0, 58.724976, 0, 0, 0, 1, -8.082859, 27.487785, 138.9834)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall 2" unique_id=1411431567]
+mesh = SubResource("BoxMesh_87cpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 2" unique_id=63734729]
+shape = SubResource("BoxShape3D_87cpq")
+
+[node name="Wall 3" type="StaticBody3D" parent="." unique_id=1974138267]
+transform = Transform3D(-7.622895e-06, 0, 0.99999994, 0, 58.72497, 0, -174.39153, 0, -4.371139e-08, 157.70222, 27.487785, 57.63871)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall 3" unique_id=908162253]
+mesh = SubResource("BoxMesh_87cpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 3" unique_id=225179649]
+shape = SubResource("BoxShape3D_87cpq")
+
+[node name="Wall 4" type="StaticBody3D" parent="." unique_id=1174684403]
+transform = Transform3D(-7.622895e-06, 0, 0.99999994, 0, 58.72497, 0, -174.39153, 0, -4.371139e-08, -170.91467, 27.487785, 57.63871)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall 4" unique_id=458219292]
+mesh = SubResource("BoxMesh_87cpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 4" unique_id=446563889]
+shape = SubResource("BoxShape3D_87cpq")
+
+[node name="Forklift" type="MeshInstance3D" parent="." unique_id=100469879]
+transform = Transform3D(0.007, 0, 0, 0, 0.007, 0, 0, 0, 0.009393204, 10.426199, 0.08058405, -9.473125)
+mesh = ExtResource("8_trn2v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift" unique_id=1061904755]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift/StaticBody3D" unique_id=1382538865]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_si2nl")
+
+[node name="Conveyor Belt" type="MeshInstance3D" parent="." unique_id=1057774695]
+transform = Transform3D(0.009, 0, 0, 0, -3.9340248e-10, 0.009, 0, -0.009, -3.9340248e-10, -17.902557, 0.034459114, -1.0890193)
+mesh = ExtResource("9_03owx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Conveyor Belt" unique_id=946255479]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Conveyor Belt/StaticBody3D" unique_id=1269531492]
+transform = Transform3D(0.999859, 0, 0, 0, 0.999859, -5.595524e-12, 0, 5.595524e-12, 0.999859, 3.286377, -0.21090698, 80.72959)
+shape = SubResource("BoxShape3D_uhdyr")
 
 [node name="Example enemy that reacts to gun" type="Node3D" parent="." unique_id=811180664 groups=["enemies"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.17768764, 1.0745363, -5.921221)
