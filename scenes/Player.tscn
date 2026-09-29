@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ctv0gxysy860c" path="res://scripts/player_hud.gd" id="3_e80uo"]
 [ext_resource type="PackedScene" uid="uid://befp8s4rc3u6i" path="res://scenes/player_hud.tscn" id="3_lbjtu"]
 [ext_resource type="PackedScene" uid="uid://c842hd1dk4cha" path="res://scenes/weapon.tscn" id="3_qu4a1"]
+[ext_resource type="PackedScene" uid="uid://ca3ma5t55ax3x" path="res://assets/jumpscare_manager.tscn" id="6_70d11"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 
@@ -38,3 +39,5 @@ mesh = SubResource("CapsuleMesh_0rwas")
 
 [node name="PlayerHud" parent="." unique_id=1207591666 instance=ExtResource("3_lbjtu")]
 script = ExtResource("3_e80uo")
+
+[node name="JumpscareManager" parent="." unique_id=1307051664 instance=ExtResource("6_70d11")]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d23tiv4x6oyr3"]
+
+[ext_resource type="Texture2D" uid="uid://srwkafyowwht" path="res://assets/Sprites/543af47e945013a2b85f042c9f4f9fbf.jpg" id="1_bfjbv"]
+[ext_resource type="Script" uid="uid://d3lm8w01h1601" path="res://do_not_look.gd" id="1_olkbo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4pa06"]
+radius = 1.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1659994055]
+script = ExtResource("1_olkbo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1007113563]
+shape = SubResource("CapsuleShape3D_4pa06")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1732531675]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("1_bfjbv")
