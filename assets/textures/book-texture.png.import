@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eog1cfawp8es"
-path.s3tc="res://.godot/imported/Error.png-67df035a47662a48c9afa3e213dbf633.s3tc.ctex"
+uid="uid://b1nynata2yhjc"
+path.s3tc="res://.godot/imported/book-texture.png-3d1ea4a8b42c79a42211fa71a1302822.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Error.png"
-dest_files=["res://.godot/imported/Error.png-67df035a47662a48c9afa3e213dbf633.s3tc.ctex"]
+source_file="res://assets/textures/book-texture.png"
+dest_files=["res://.godot/imported/book-texture.png-3d1ea4a8b42c79a42211fa71a1302822.s3tc.ctex"]
 
 [params]
 

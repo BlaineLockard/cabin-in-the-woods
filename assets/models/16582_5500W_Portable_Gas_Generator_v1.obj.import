@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpspoemquu0wa"
+path="res://.godot/imported/16582_5500W_Portable_Gas_Generator_v1.obj-818c9e8b494dc714412b0c2507c2a1ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/16582_5500W_Portable_Gas_Generator_v1.obj-818c9e8b494dc714412b0c2507c2a1ca.mesh"]
+
+source_file="res://assets/models/16582_5500W_Portable_Gas_Generator_v1.obj"
+dest_files=["res://.godot/imported/16582_5500W_Portable_Gas_Generator_v1.obj-818c9e8b494dc714412b0c2507c2a1ca.mesh", "res://.godot/imported/16582_5500W_Portable_Gas_Generator_v1.obj-818c9e8b494dc714412b0c2507c2a1ca.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
