@@ -37,6 +37,8 @@ func attack_loop(_delta: float):
 func attack():
 	is_active = false
 	print(str(name) + " triggered! Applying jumpscare and penalty...")
+	#TODO: call the player's function to get hurt
+	#player.get_attacked()??
 	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
 	
 	despawn()

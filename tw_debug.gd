@@ -1,7 +1,7 @@
 extends Node3D
 
-# Drag your specific enemy scene (e.g., DontLook.tscn) into this slot in the Inspector
 const ENEMY_SCENE = preload("res://assets/enemy_base.tscn")
+const DONTLOOK_SCENE = preload("res://assets/don't_look.tscn")
 
 # Grab a reference to the player so we can pass it to the enemy
 @export var player: Node3D
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 func _input(event):
 	# Press 'K' to spawn the monster
 	if event is InputEventKey and event.pressed and event.keycode == KEY_K:
-		var new_enemy = ENEMY_SCENE.instantiate()
+		var new_enemy = DONTLOOK_SCENE.instantiate()
 		
 		# Always add to the scene tree BEFORE calling custom setup logic
 		add_child(new_enemy)
