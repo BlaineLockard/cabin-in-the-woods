@@ -36,7 +36,7 @@ func attack_loop(_delta: float):
 #How do we snatch the player's chain?
 func attack():
 	is_active = false
-	print("[INSERT NAME] triggered! Applying jumpscare and penalty...")
+	print(str(name) + " triggered! Applying jumpscare and penalty...")
 	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
 	
 	despawn()
@@ -44,11 +44,17 @@ func attack():
 #What do we do when the player successfully survives the enemy's encounter?
 func survive():
 	is_active = false
-	print("Player survived the encounter.")
+	print("Player survived " + str(name) + "'s encounter.")
 	despawn()
 
 func despawn():
 	queue_free()
+
+# NOTE: Only connects properly if I am in the enemies group!
+# I dont need to connect anything! I just need to have the correct function name and be in the Enemy group!
+func react_to_weapon(_postion: Vector3):
+	##Override this function to make the enemy react to gunshots.
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not is_active:

@@ -12,7 +12,7 @@ func _ready() -> void:
 	# Add one more bullet in the chamber
 	ammo_count += 1
 	
-	for enemy in get_tree().get_nodes_in_group("enemies"):
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		connect("weapon_fired", enemy.react_to_weapon)
 
 

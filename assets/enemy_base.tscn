@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://d3lm8w01h1601" path="res://scripts/enemy_base.gd" id="1_dg2mr"]
 [ext_resource type="Texture2D" uid="uid://srwkafyowwht" path="res://assets/Sprites/543af47e945013a2b85f042c9f4f9fbf.jpg" id="2_loibs"]
+[ext_resource type="AudioStream" uid="uid://cpwe1an40flul" path="res://assets/Sounds/soumages-jumpscare-v2-335599.mp3" id="3_8icf8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4pa06"]
 radius = 1.0
 
-[node name="EnemyBase" type="CharacterBody3D" unique_id=1659994055]
+[node name="EnemyBase" type="CharacterBody3D" unique_id=1659994055 groups=["Enemy"]]
 script = ExtResource("1_dg2mr")
 scare_image = ExtResource("2_loibs")
+scare_sfx = ExtResource("3_8icf8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1007113563]
 shape = SubResource("CapsuleShape3D_4pa06")

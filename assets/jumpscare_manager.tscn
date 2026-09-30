@@ -14,3 +14,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1592620449]
+volume_db = 10.0

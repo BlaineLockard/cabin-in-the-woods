@@ -32,6 +32,10 @@ folder_colors={
 
 import/blender/enabled=false
 
+[global_group]
+
+Enemy=""
+
 [input]
 
 up={
