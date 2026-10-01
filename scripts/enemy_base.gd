@@ -77,3 +77,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		#until then, shenanigans
 		attack_loop(delta)
+
+func call_OS_alert(message: String) -> void:
+	print("SENDING OS ALERT: " + message)
+	get_tree().paused = true
+	
+	# 2. Free the mouse so the player can actually click "OK"
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	await get_tree().create_timer(0.1).timeout
+	
+	OS.alert(message, "How to play!")
+	
+	# 5. Recapture the mouse and unpause
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().paused = false
+	

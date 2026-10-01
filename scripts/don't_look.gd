@@ -12,17 +12,16 @@ const JUMP_VELOCITY = 4.5
 var delayed_y_rotation: float = 0.0
 
 func _on_spawn():
+	global_position.y = -100.0
 	#TODO: this is where the logic would go to make a UI message to use the
 	#mouse to look behind them
+	call_OS_alert("Use the mouse to look behind you!")
 	
 	delayed_y_rotation = player.global_rotation.y
 
 
 func attack_loop(_delta: float):
 	
-	#TODO: go directly behind the player, close behind them, hovering to rotate and follow their view 
-	#with a two second delay. if we've been active for more than five seconds, forcibly apply 
-	#rotation to make them look behind them
 	delayed_y_rotation = lerp_angle(delayed_y_rotation, player.global_rotation.y, _delta* (1.0 / HOVER_DELAY_FACTOR))
 	
 	var offset = Vector3.BACK.rotated(Vector3.UP, delayed_y_rotation) * hover_dist

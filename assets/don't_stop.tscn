@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ndu1uq7oawl3"]
+
+[ext_resource type="PackedScene" uid="uid://d23tiv4x6oyr3" path="res://assets/enemy_base.tscn" id="1_glp5h"]
+[ext_resource type="Script" uid="uid://ddhdf53b0f4e3" path="res://don't_stop.gd" id="2_0rfju"]
+[ext_resource type="Texture2D" uid="uid://d0hmeje8gsvam" path="res://assets/Sprites/DontStop.png" id="3_0rfju"]
+[ext_resource type="AudioStream" uid="uid://b2t2a2qqh1870" path="res://assets/Sounds/freesound_community-jumpscare-94984.mp3" id="4_jrct1"]
+[ext_resource type="AudioStream" uid="uid://c1c0bkpuslr32" path="res://assets/Sounds/freesound_community-running-on-metal-74791.mp3" id="5_g5y83"]
+
+[node name="Don\'tStop" unique_id=1659994055 instance=ExtResource("1_glp5h")]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("2_0rfju")
+scare_image = ExtResource("3_0rfju")
+scare_sfx = ExtResource("4_jrct1")
+
+[node name="Sprite3D" parent="." index="1" unique_id=1732531675]
+transform = Transform3D(0.69, 0, 0, 0, 0.69, 0, 0, 0, 0.69, 0, 0, 0)
+texture = ExtResource("3_0rfju")
+
+[node name="ChaseSound" type="AudioStreamPlayer" parent="." index="2" unique_id=343111194]
+stream = ExtResource("5_g5y83")
+pitch_scale = 1.18
