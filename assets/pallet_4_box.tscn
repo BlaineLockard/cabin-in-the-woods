@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ddmymlj4eeem5"]
+
+[ext_resource type="Texture2D" uid="uid://c4kntic6mxn8f" path="res://assets/textures/everytexture.com-stock-wood-tree-barkl-texture-00030.jpg" id="1_xvtrw"]
+[ext_resource type="ArrayMesh" uid="uid://ckgirs18viqq" path="res://assets/models/woodPallet.obj" id="2_emcyj"]
+[ext_resource type="Texture2D" uid="uid://bbh8dgy6fimxt" path="res://assets/textures/everytexture.com-stock-paper-texture-00042.jpg" id="3_3ce2e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8wnl"]
+albedo_texture = ExtResource("1_xvtrw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gi2qh"]
+size = Vector3(50.974365, 6.95874, 41.02893)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snjjq"]
+albedo_texture = ExtResource("3_3ce2e")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxfnc"]
+
+[node name="Pallet4Box" type="Node3D" unique_id=1429627650]
+
+[node name="Alt Box Pallet" type="Node3D" parent="." unique_id=621723229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6438046, 9.195437)
+
+[node name="WoodPallet" type="MeshInstance3D" parent="Alt Box Pallet" unique_id=1068187853]
+transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 0.22779322, 3.3369029, -9.121433)
+material_override = SubResource("StandardMaterial3D_t8wnl")
+mesh = ExtResource("2_emcyj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Alt Box Pallet/WoodPallet" unique_id=1743658613]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Alt Box Pallet/WoodPallet/StaticBody3D" unique_id=1725982276]
+transform = Transform3D(1.0000007, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, -0.5323181, 2.9486175, 0.286438)
+shape = SubResource("BoxShape3D_gi2qh")
+
+[node name="Decorational Box" type="StaticBody3D" parent="Alt Box Pallet" unique_id=328295777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8743398, 5.002024, -10.360825)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Alt Box Pallet/Decorational Box" unique_id=1592564233]
+transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_snjjq")
+mesh = SubResource("BoxMesh_nxfnc")
+
+[node name="Decorational Box2" type="StaticBody3D" parent="Alt Box Pallet" unique_id=851825782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3514721, 5.002024, -10.257773)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Alt Box Pallet/Decorational Box2" unique_id=636043055]
+transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_snjjq")
+mesh = SubResource("BoxMesh_nxfnc")
+
+[node name="Decorational Box4" type="StaticBody3D" parent="Alt Box Pallet" unique_id=676534732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3669903, 5.002024, -8.085318)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Alt Box Pallet/Decorational Box4" unique_id=1719736974]
+transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_snjjq")
+mesh = SubResource("BoxMesh_nxfnc")
+
+[node name="Decorational Box3" type="StaticBody3D" parent="Alt Box Pallet" unique_id=987470567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8419564, 5.002024, -8.160147)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Alt Box Pallet/Decorational Box3" unique_id=1483565024]
+transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_snjjq")
+mesh = SubResource("BoxMesh_nxfnc")

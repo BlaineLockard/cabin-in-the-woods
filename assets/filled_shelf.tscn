@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cv2dm00uayxc2"]
+
+[ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="1_0jsou"]
+[ext_resource type="PackedScene" uid="uid://xqu0wj0nbpjl" path="res://assets/pallet_8_box.tscn" id="2_0jsou"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87cpq"]
+size = Vector3(104.67326, 161.73465, 39.90628)
+
+[node name="FilledShelf" type="Node3D" unique_id=817292305]
+
+[node name="Shelf18" type="MeshInstance3D" parent="." unique_id=1233476381]
+transform = Transform3D(-1.3604818e-08, 0, -0.14110136, 0, 0.14634053, 0, 0.3112419, 0, -6.167736e-09, 0, 0, 0)
+mesh = ExtResource("1_0jsou")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shelf18" unique_id=1503827304]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf18/StaticBody3D" unique_id=496023090]
+transform = Transform3D(0.99999934, 0, -1.0658141e-14, 0, 0.9999993, 0, 1.4210855e-14, 0, 0.9999993, 3.8416815e-07, 80.149124, 19.38625)
+shape = SubResource("BoxShape3D_87cpq")
+
+[node name="Pallet_8_box" parent="." unique_id=115430393 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8974545, 1.4903612, 12.62915)
+
+[node name="Pallet_8_box2" parent="." unique_id=1573932949 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.623781, 1.4903612, 7.4779406)
+
+[node name="Pallet_8_box3" parent="." unique_id=256148923 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7230098, 1.4903612, 2.486515)
+
+[node name="Pallet_8_box4" parent="." unique_id=471542810 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2.980128, 1.4903612, -2.4169679)
+
+[node name="Pallet_8_box5" parent="." unique_id=1441441036 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.980128, 1.4903612, -8.01222)
+
+[node name="Pallet_8_box6" parent="." unique_id=948726792 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.8626194, 1.4903612, -13.202951)
+
+[node name="Pallet_8_box19" parent="." unique_id=33147445 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8974545, 11.882631, 12.62915)
+
+[node name="Pallet_8_box20" parent="." unique_id=1033571317 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.623781, 11.882631, 7.4779406)
+
+[node name="Pallet_8_box21" parent="." unique_id=546136235 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7230098, 11.882631, 2.486515)
+
+[node name="Pallet_8_box22" parent="." unique_id=1263097128 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2.980128, 11.882631, -2.4169679)
+
+[node name="Pallet_8_box23" parent="." unique_id=172575712 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.980128, 11.882631, -8.01222)
+
+[node name="Pallet_8_box24" parent="." unique_id=1918837234 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.8626194, 11.882631, -13.202951)
+
+[node name="Pallet_8_box25" parent="." unique_id=1156978387 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8974545, 22.35875, 12.62915)
+
+[node name="Pallet_8_box26" parent="." unique_id=265998437 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.623781, 22.35875, 7.4779406)
+
+[node name="Pallet_8_box27" parent="." unique_id=157520323 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7230098, 22.35875, 2.486515)
+
+[node name="Pallet_8_box28" parent="." unique_id=387079641 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2.980128, 22.35875, -2.4169679)
+
+[node name="Pallet_8_box29" parent="." unique_id=1607286627 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.980128, 22.35875, -8.01222)
+
+[node name="Pallet_8_box30" parent="." unique_id=1832148017 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.8626194, 22.35875, -13.202951)
+
+[node name="Pallet_8_box7" parent="." unique_id=2040260834 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.791585, 6.7250223, -12.975328)
+
+[node name="Pallet_8_box8" parent="." unique_id=828794539 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -3.065259, 6.7250223, -7.8241186)
+
+[node name="Pallet_8_box9" parent="." unique_id=495285326 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -2.9660306, 6.7250223, -2.832693)
+
+[node name="Pallet_8_box10" parent="." unique_id=964710477 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.7089128, 6.7250223, 2.0707898)
+
+[node name="Pallet_8_box11" parent="." unique_id=1798536235 instance=ExtResource("2_0jsou")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, -2.7089133, 6.7250223, 7.6660423)
+
+[node name="Pallet_8_box12" parent="." unique_id=1448881665 instance=ExtResource("2_0jsou")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, -2.8264225, 6.7250223, 12.856773)
+
+[node name="Pallet_8_box13" parent="." unique_id=282783590 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.791585, 17.175655, -12.975328)
+
+[node name="Pallet_8_box14" parent="." unique_id=269353664 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -3.065259, 17.175655, -7.8241186)
+
+[node name="Pallet_8_box15" parent="." unique_id=1455278708 instance=ExtResource("2_0jsou")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -2.9660306, 17.175655, -2.832693)
+
+[node name="Pallet_8_box16" parent="." unique_id=1125228102 instance=ExtResource("2_0jsou")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -2.7089128, 17.175655, 2.0707898)
+
+[node name="Pallet_8_box17" parent="." unique_id=2015926429 instance=ExtResource("2_0jsou")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, -2.7089133, 17.175655, 7.6660423)
+
+[node name="Pallet_8_box18" parent="." unique_id=1599717813 instance=ExtResource("2_0jsou")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, -2.8264225, 17.175655, 12.856773)

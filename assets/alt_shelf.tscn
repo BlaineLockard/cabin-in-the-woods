@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://d3dapie8w0gbf"]
+
+[ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="1_vqlwy"]
+[ext_resource type="PackedScene" uid="uid://ddmymlj4eeem5" path="res://assets/pallet_4_box.tscn" id="2_edhuy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edhuy"]
+size = Vector3(104.69621, 163.50879, 39.324936)
+
+[node name="Alt_Shelf" type="Node3D" unique_id=98512145]
+
+[node name="Shelf20" type="MeshInstance3D" parent="." unique_id=1307643417]
+transform = Transform3D(-1.8751951e-08, 0, -0.14110136, 0, 0.10189916, 0, 0.42899457, 0, -6.167736e-09, 2.731617, -0.90116143, 0.3921051)
+mesh = ExtResource("1_vqlwy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shelf20" unique_id=1296117101]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf20/StaticBody3D" unique_id=2136152110]
+transform = Transform3D(1, 0, 1.034781e-06, 0, 1, 0, -1.0347813e-06, 0, 1, 0.016159952, 80.29708, 19.745243)
+shape = SubResource("BoxShape3D_edhuy")
+
+[node name="Pallet4Box" parent="." unique_id=1429627650 instance=ExtResource("2_edhuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 0.5375006, 17.807217)
+
+[node name="Pallet4Box2" parent="." unique_id=1180062063 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.25745606, 0.5375006, 12.486925)
+
+[node name="Pallet4Box3" parent="." unique_id=719113949 instance=ExtResource("2_edhuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 0.5375006, 6.945593)
+
+[node name="Pallet4Box4" parent="." unique_id=209312046 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.25745606, 0.5375006, 0.88685274)
+
+[node name="Pallet4Box5" parent="." unique_id=665196206 instance=ExtResource("2_edhuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 0.5375006, -4.8368564)
+
+[node name="Pallet4Box6" parent="." unique_id=1552310802 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 0.5352609, 0.5375006, -10.5860405)
+
+[node name="Pallet4Box7" parent="." unique_id=2077948692 instance=ExtResource("2_edhuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 0.5375006, -16.257523)
+
+[node name="Pallet4Box8" parent="." unique_id=316608597 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030964032, 4.2829733, -15.965454)
+
+[node name="Pallet4Box9" parent="." unique_id=1731770989 instance=ExtResource("2_edhuy")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.030964494, 4.2829733, -10.645163)
+
+[node name="Pallet4Box10" parent="." unique_id=1957281240 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030964978, 4.2829733, -5.1038313)
+
+[node name="Pallet4Box11" parent="." unique_id=1664253660 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.030965507, 4.2829733, 0.9549092)
+
+[node name="Pallet4Box12" parent="." unique_id=364348131 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030966014, 4.2829733, 6.678618)
+
+[node name="Pallet4Box13" parent="." unique_id=1107153538 instance=ExtResource("2_edhuy")]
+transform = Transform3D(0.9659258, 0, -0.25881922, 0, 1, 0, 0.25881922, 0, 0.9659258, -0.8236835, 4.2829733, 12.427803)
+
+[node name="Pallet4Box14" parent="." unique_id=1612113037 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030967012, 4.2829733, 18.099285)
+
+[node name="Pallet4Box15" parent="." unique_id=25611671 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030964032, 7.853325, -15.965454)
+
+[node name="Pallet4Box16" parent="." unique_id=1033231996 instance=ExtResource("2_edhuy")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.030964494, 7.853325, -10.645163)
+
+[node name="Pallet4Box17" parent="." unique_id=1301111734 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030964978, 7.853325, -5.1038313)
+
+[node name="Pallet4Box18" parent="." unique_id=300851031 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.030965507, 7.853325, 0.9549092)
+
+[node name="Pallet4Box19" parent="." unique_id=1050272407 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030966014, 7.853325, 6.678618)
+
+[node name="Pallet4Box20" parent="." unique_id=1280409426 instance=ExtResource("2_edhuy")]
+transform = Transform3D(0.9659258, 0, -0.25881922, 0, 1, 0, 0.25881922, 0, 0.9659258, -0.8236835, 7.853325, 12.427803)
+
+[node name="Pallet4Box21" parent="." unique_id=1463857345 instance=ExtResource("2_edhuy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.030967012, 7.853325, 18.099285)

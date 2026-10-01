@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://c4383d24j6qtu"]
+
+[ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="1_ugek7"]
+[ext_resource type="PackedScene" uid="uid://ddmymlj4eeem5" path="res://assets/pallet_4_box.tscn" id="2_j4du1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4du1"]
+size = Vector3(104.174, 158.126, 37.249)
+
+[node name="Wall_Shelf" type="Node3D" unique_id=1452782760]
+
+[node name="Shelf26" type="MeshInstance3D" parent="." unique_id=1728386348]
+transform = Transform3D(-1.2135856e-08, 0, -0.14110136, 0, 0.10189916, 0, 0.27763596, 0, -6.167736e-09, 2.7938118, -0.026674509, 0.018404484)
+mesh = ExtResource("1_ugek7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shelf26" unique_id=1437446900]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf26/StaticBody3D" unique_id=129926930]
+transform = Transform3D(1, 0, 1.034781e-06, 0, 1, 0, -1.034781e-06, 0, 1, 0.50643635, 83.1457, 19.948578)
+shape = SubResource("BoxShape3D_j4du1")
+
+[node name="Pallet4Box" parent="." unique_id=1429627650 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.7949101, 0, -0.6067273, 0, 1, 0, 0.6067273, 0, 0.7949101, 0.047467947, 1.5024507, 10.639518)
+
+[node name="Pallet4Box2" parent="." unique_id=1474332065 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.25745606, 1.5024507, 5.3372846)
+
+[node name="Pallet4Box3" parent="." unique_id=1185416401 instance=ExtResource("2_j4du1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 1.5024507, 0.49820757)
+
+[node name="Pallet4Box4" parent="." unique_id=128844168 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.70150346, 0, 0.71266603, 0, 1, 0, -0.71266603, 0, 0.70150346, -0.25745606, 1.5024507, -4.890483)
+
+[node name="Pallet4Box5" parent="." unique_id=1984512186 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.6205527, 0, 0.78416467, 0, 1, 0, -0.78416467, 0, -0.6205527, -0.25745606, 1.5024507, -10.802265)
+
+[node name="Pallet4Box6" parent="." unique_id=1307099520 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.7949101, 0, -0.6067273, 0, 1, 0, 0.6067273, 0, 0.7949101, 0.047467947, 8.792403, 10.639518)
+
+[node name="Pallet4Box7" parent="." unique_id=723491509 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.25745606, 8.792403, 5.3372846)
+
+[node name="Pallet4Box8" parent="." unique_id=849723929 instance=ExtResource("2_j4du1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 8.792403, 0.49820757)
+
+[node name="Pallet4Box9" parent="." unique_id=1547857956 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.70150346, 0, 0.71266603, 0, 1, 0, -0.71266603, 0, 0.70150346, -0.25745606, 8.792403, -4.890483)
+
+[node name="Pallet4Box10" parent="." unique_id=1611105052 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.6205527, 0, 0.78416467, 0, 1, 0, -0.78416467, 0, -0.6205527, -0.25745606, 8.792403, -10.802265)
+
+[node name="Pallet4Box11" parent="." unique_id=2115056185 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.7949101, 0, -0.6067273, 0, 1, 0, 0.6067273, 0, 0.7949101, 0.047467947, 15.999253, 10.639518)
+
+[node name="Pallet4Box12" parent="." unique_id=591321612 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.25745606, 15.999253, 5.3372846)
+
+[node name="Pallet4Box13" parent="." unique_id=1613230774 instance=ExtResource("2_j4du1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25745606, 15.999253, 0.49820757)
+
+[node name="Pallet4Box14" parent="." unique_id=682045321 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.70150346, 0, 0.71266603, 0, 1, 0, -0.71266603, 0, 0.70150346, -0.25745606, 15.999253, -4.890483)
+
+[node name="Pallet4Box15" parent="." unique_id=1969544769 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.6205527, 0, 0.78416467, 0, 1, 0, -0.78416467, 0, -0.6205527, -0.25745606, 15.999253, -10.802265)
+
+[node name="Pallet4Box16" parent="." unique_id=86265780 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.79491, 0, 0.60672736, 0, 1, 0, -0.60672736, 0, -0.79491, -0.44040954, 12.382604, -10.326613)
+
+[node name="Pallet4Box17" parent="." unique_id=1364881323 instance=ExtResource("2_j4du1")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.135486, 12.382604, -5.02438)
+
+[node name="Pallet4Box18" parent="." unique_id=2056455102 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13548642, 12.382604, -0.18530284)
+
+[node name="Pallet4Box19" parent="." unique_id=556363581 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.7015035, 0, -0.712666, 0, 1, 0, 0.712666, 0, -0.7015035, -0.1354869, 12.382604, 5.2033873)
+
+[node name="Pallet4Box20" parent="." unique_id=643969909 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.62055266, 0, -0.7841647, 0, 1, 0, 0.7841647, 0, 0.62055266, -0.1354874, 12.382604, 11.11517)
+
+[node name="Pallet4Box21" parent="." unique_id=1449293791 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.79491, 0, 0.60672736, 0, 1, 0, -0.60672736, 0, -0.79491, -0.44040954, 4.9867887, -10.326613)
+
+[node name="Pallet4Box22" parent="." unique_id=882475642 instance=ExtResource("2_j4du1")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.135486, 4.9867887, -5.02438)
+
+[node name="Pallet4Box23" parent="." unique_id=1095159442 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13548642, 4.9867887, -0.18530284)
+
+[node name="Pallet4Box24" parent="." unique_id=1843045587 instance=ExtResource("2_j4du1")]
+transform = Transform3D(-0.7015035, 0, -0.712666, 0, 1, 0, 0.712666, 0, -0.7015035, -0.1354869, 4.9867887, 5.2033873)
+
+[node name="Pallet4Box25" parent="." unique_id=1448132035 instance=ExtResource("2_j4du1")]
+transform = Transform3D(0.62055266, 0, -0.7841647, 0, 1, 0, 0.7841647, 0, 0.62055266, -0.1354874, 4.9867887, 11.11517)
