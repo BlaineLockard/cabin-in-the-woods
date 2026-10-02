@@ -42,6 +42,7 @@ func attack():
 	is_active = false
 	print(str(name) + " triggered! Applying jumpscare and penalty...")
 	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
+	hurt_player.emit(name)
 	
 	despawn()
 

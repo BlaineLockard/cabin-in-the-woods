@@ -46,6 +46,9 @@ func attack():
 	print(str(name) + " triggered! Applying jumpscare and penalty...")
 	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
 	
+	# Let everyone know that it was ME who hurt the player
+	hurt_player.emit(name)
+	
 	despawn()
 
 #What do we do when the player successfully survives the enemy's encounter?

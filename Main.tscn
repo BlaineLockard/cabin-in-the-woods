@@ -443,15 +443,18 @@ spot_angle = 62.842216
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=2028779112]
 transform = Transform3D(1, 0, 0, 0, 0.2979898, -0.95456886, 0, 0.95456886, 0.2979898, 0, 0, 0)
+visible = false
 
 [node name="THE SUN (temp)" type="DirectionalLight3D" parent="env" unique_id=1268182148]
 transform = Transform3D(1, 0, 0, 0, -0.1824227, 0.98322016, 0, -0.98322016, -0.1824227, 0, 72.99162, 55.173756)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1438385980]
 environment = SubResource("Environment_glv2v")
 
 [node name="player" parent="." unique_id=1374814702 groups=["player"] instance=ExtResource("1_glv2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17768764, 0, -21.621607)
+canJump = false
 
 [node name="NavRegion" type="NavigationRegion3D" parent="." unique_id=712139461]
 navigation_mesh = SubResource("NavigationMesh_adpiu")

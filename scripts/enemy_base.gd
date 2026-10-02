@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name BaseEnemy
 
+signal hurt_player(name: String)
+
 var active_time: float = 5.0
 var _time_alive: float = 0.0
 var is_active: bool = false
@@ -15,6 +17,12 @@ func spawn(target: Node3D, duration: float):
 	active_time = duration
 	_time_alive = 0.0
 	is_active = true
+	
+	# Added me to the Enemy group so everyone KNOWS I'm bad
+	add_to_group("Enemy")
+	
+	# Connect me to the game end manager so I can murder the player
+	get_tree().call_group("GameEndManager", "connect_to_enemy", self)
 	
 	#Call the function that defines what this enemy does when they spawn in
 	_on_spawn()
@@ -40,6 +48,9 @@ func attack():
 	#TODO: call the player's function to get hurt
 	#player.get_attacked()??
 	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
+	
+	# Let everyone know that it was ME who hurt the player
+	hurt_player.emit(name)
 	
 	despawn()
 

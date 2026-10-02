@@ -21,6 +21,7 @@ class_name CharacterController extends CharacterBody3D
 @onready var camera := $head/Camera3D
 @onready var head: Node3D = $head
 @onready var hud: HUD = $PlayerHud
+@onready var player_footstep: AudioStreamPlayer3D = $PlayerFootstep
 
 
 const HEADBOB_AMOUNT = 0.03
@@ -36,9 +37,23 @@ var noClipSpeedMult := 3.0
 var just_in_air := false
 var _spawn_grace := true
 
-##Gets the players current speed.
+var should_limp: = false
+var limp_speed: = 2.5
+
+var last_step_index: int = 0
+
+const FOOT_STEP_SOUNDS = [
+	preload("uid://cj4s0ukclf4bi"),
+	preload("uid://dui7i7im55k88"),
+	preload("uid://c0etypcxloqo4"),
+	preload("uid://chgtc5yvp27sh"),
+]
+
+## Gets the players current speed.
 func getMoveSpeed():
-	if canSprint and Input.is_action_pressed("sprint"):
+	if should_limp:
+		return limp_speed
+	elif canSprint and Input.is_action_pressed("sprint"):
 		return speedSprint 
 	else:
 		return speed
@@ -89,11 +104,41 @@ func _do_noclip(delta) -> bool:
 
 func _doHeadbob(delta) -> void:
 	headbobTime += delta * self.velocity.length()
-	camera.transform.origin = Vector3(
-		cos(headbobTime * HEADBOB_FREQ * 0.5) * HEADBOB_AMOUNT,
-		sin(headbobTime * HEADBOB_FREQ) * HEADBOB_AMOUNT,
-		0
-	)
+	
+	if should_limp:
+		var t = headbobTime * HEADBOB_FREQ * 0.75
+		
+		var phase = fmod(t, TAU)
+		var bad_step = phase < PI  # PI = half, first half bad leg, second half good leg
+		
+		var step_t = fmod(phase, PI) / PI
+		
+		var dip_strength = 3.0 if bad_step else 0.2
+		var y = -abs(sin(step_t * PI)) * HEADBOB_AMOUNT * dip_strength
+	
+		var x = (sin(t) * 0.5 + 0.5) * HEADBOB_AMOUNT * 1.5 - HEADBOB_AMOUNT * 0.5
+		
+		camera.transform.origin = Vector3(x, y, 0)
+		_check_footstep(int(floor((t + PI / 2.0) / PI)), bad_step)
+	else:
+		var t = headbobTime * HEADBOB_FREQ
+		camera.transform.origin = Vector3(
+			cos(headbobTime * HEADBOB_FREQ * 0.5) * HEADBOB_AMOUNT,
+			sin(headbobTime * HEADBOB_FREQ) * HEADBOB_AMOUNT,
+			0
+		)
+		_check_footstep(int(floor((t + PI / 2.0) / TAU)), false)
+
+
+func _check_footstep(step_index: int, heavy: bool) -> void:
+	if step_index == last_step_index:
+		return
+	last_step_index = step_index
+
+	# Heavier, louder thud on the injured leg
+	player_footstep.volume_db = 0.0 if heavy else -6.0
+	player_footstep.stream = FOOT_STEP_SOUNDS.pick_random()
+	player_footstep.play()
 
 
 func _doGroundPhysics(delta) -> void:
@@ -105,7 +150,7 @@ func _doGroundPhysics(delta) -> void:
 		self.velocity += accel * desiredDir
 	
 	var control = max(self.velocity.length(), groundDecel)
-	var drop = control * groundFriction * delta
+	var drop = control * groundFriction * delta * (getMoveSpeed() / speed)
 	var newSpeed = max(self.velocity.length() - drop, 0.0)
 	if self.velocity.length() > 0:
 		newSpeed /= self.velocity.length()

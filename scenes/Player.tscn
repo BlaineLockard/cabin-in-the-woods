@@ -41,3 +41,5 @@ mesh = SubResource("CapsuleMesh_0rwas")
 script = ExtResource("3_e80uo")
 
 [node name="JumpscareManager" parent="." unique_id=1307051664 instance=ExtResource("6_70d11")]
+
+[node name="PlayerFootstep" type="AudioStreamPlayer3D" parent="." unique_id=315651303]
