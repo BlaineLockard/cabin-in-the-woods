@@ -752,22 +752,22 @@ transform = Transform3D(0.86045456, 0, 0, 0, 1.5329224, 0, 0, 0, 1.0551207, 142.
 shape = SubResource("BoxShape3D_qh475")
 
 [node name="Floor" parent="NavRegion" unique_id=811895826 instance=ExtResource("5_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.502392, -0.055, 24.640171)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.502392, -0.055, 23.640171)
 
 [node name="Floor2" parent="NavRegion" unique_id=1719211131 instance=ExtResource("5_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.497604, -0.055, 24.640171)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.497604, -0.055, 23.640171)
 
 [node name="Floor3" parent="NavRegion" unique_id=1524882949 instance=ExtResource("5_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.497604, -0.055, 124.64017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.497604, -0.055, 123.64017)
 
 [node name="Floor4" parent="NavRegion" unique_id=949830344 instance=ExtResource("5_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5023956, -0.055, 124.64017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5023956, -0.055, 123.64017)
 
 [node name="Floor5" parent="NavRegion" unique_id=347971467 instance=ExtResource("5_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.502396, -0.055, 124.64017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.502396, -0.055, 123.64017)
 
 [node name="Floor6" parent="NavRegion" unique_id=1863602856 instance=ExtResource("5_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.502396, -0.055, 24.640167)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.502396, -0.055, 23.640167)
 
 [node name="Wall 1" type="StaticBody3D" parent="." unique_id=1703582663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.082859, 27.487785, -26.263594)
@@ -1192,7 +1192,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -0.0
 mesh = SubResource("BoxMesh_qh475")
 
 [node name="Laptop" type="MeshInstance3D" parent="Objects" unique_id=724513135]
-transform = Transform3D(-1.135, 0, 9.922485e-08, 0, 1.135, 0, -9.922485e-08, 0, -1.135, -0.4076035, 0.4844458, -26.242882)
+transform = Transform3D(-1.135, 0, 1.7138024e-07, 0, 1.135, 0, -1.7138024e-07, 0, -1.135, -0.4076035, 0.4844458, -26.242882)
 material_override = SubResource("StandardMaterial3D_mxvw5")
 mesh = SubResource("ArrayMesh_w3rk5")
 
