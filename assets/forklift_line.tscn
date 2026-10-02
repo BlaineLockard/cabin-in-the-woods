@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://csbn0shwj5xrf"]
+
+[ext_resource type="ArrayMesh" uid="uid://de84kb8x0kea5" path="res://assets/models/Forklift.obj" id="1_lwhxk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_02acx"]
+size = Vector3(536.7488, 525.9797, 264.2113)
+
+[node name="Forklift_Line" type="Node3D" unique_id=174999927]
+
+[node name="Forklift18" type="MeshInstance3D" parent="." unique_id=1848973701]
+transform = Transform3D(-0.006989148, 0, -0.0005228622, 0, 0.0070000035, 0, 0.0003896479, 0, -0.009378641, 4.350464, 0.058665276, -0.4589455)
+mesh = ExtResource("1_lwhxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift18" unique_id=1872217888]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift18/StaticBody3D" unique_id=833341263]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_02acx")
+
+[node name="Forklift22" type="MeshInstance3D" parent="." unique_id=2061028791]
+transform = Transform3D(0.0003896482, 0, -0.009378641, 0, 0.0070000044, 0, 0.006989148, 0, 0.0005228626, 7.545883, 0.058665276, -0.4589455)
+mesh = ExtResource("1_lwhxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift22" unique_id=34743483]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift22/StaticBody3D" unique_id=507451085]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_02acx")
+
+[node name="Forklift19" type="MeshInstance3D" parent="." unique_id=26627589]
+transform = Transform3D(-0.0037222384, 0, 0.00795513, 0, 0.0070000035, 0, -0.0059283194, 0, -0.0049948185, -8.4131775, 0.058665276, 0.32681155)
+mesh = ExtResource("1_lwhxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift19" unique_id=2045611388]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift19/StaticBody3D" unique_id=1859385041]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_02acx")
+
+[node name="Forklift20" type="MeshInstance3D" parent="." unique_id=2079854894]
+transform = Transform3D(-0.0062562516, 0, -0.0042134663, 0, 0.0070000025, 0, 0.0031399592, 0, -0.008395176, -3.2350845, 0.058665276, 0.32681155)
+mesh = ExtResource("1_lwhxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift20" unique_id=1270274813]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift20/StaticBody3D" unique_id=673167444]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_02acx")
+
+[node name="Forklift21" type="MeshInstance3D" parent="." unique_id=1691631840]
+transform = Transform3D(0.0017418812, 0, -0.009097736, 0, 0.0070000035, 0, 0.006779814, 0, 0.0023374057, 0.2385788, 0.058665276, 0.32681155)
+mesh = ExtResource("1_lwhxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift21" unique_id=1886251237]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift21/StaticBody3D" unique_id=751556565]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_02acx")

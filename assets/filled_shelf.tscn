@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://cv2dm00uayxc2"]
 
 [ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="1_0jsou"]
+[ext_resource type="Texture2D" uid="uid://dm77ctmhff1k3" path="res://assets/textures/stainless-steel.jpg" id="1_gwjs3"]
 [ext_resource type="PackedScene" uid="uid://xqu0wj0nbpjl" path="res://assets/pallet_8_box.tscn" id="2_0jsou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1v0o"]
+albedo_texture = ExtResource("1_gwjs3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_87cpq"]
 size = Vector3(104.67326, 161.73465, 39.90628)
@@ -10,6 +14,7 @@ size = Vector3(104.67326, 161.73465, 39.90628)
 
 [node name="Shelf18" type="MeshInstance3D" parent="." unique_id=1233476381]
 transform = Transform3D(-1.3604818e-08, 0, -0.14110136, 0, 0.14634053, 0, 0.3112419, 0, -6.167736e-09, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_x1v0o")
 mesh = ExtResource("1_0jsou")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Shelf18" unique_id=1503827304]
