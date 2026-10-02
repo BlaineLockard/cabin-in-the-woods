@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dm77ctmhff1k3" path="res://assets/textures/stainless-steel.jpg" id="1_bs561"]
 [ext_resource type="ArrayMesh" uid="uid://b1h53gl2biodn" path="res://assets/models/eb_metal_shelf_01.obj" id="1_vqlwy"]
-[ext_resource type="PackedScene" uid="uid://ddmymlj4eeem5" path="res://assets/pallet_4_box.tscn" id="2_edhuy"]
+[ext_resource type="PackedScene" uid="uid://ddmymlj4eeem5" path="res://scenes/pallet_4_box.tscn" id="2_edhuy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vceq"]
 albedo_texture = ExtResource("1_bs561")

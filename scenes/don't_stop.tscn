@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ndu1uq7oawl3"]
 
-[ext_resource type="PackedScene" uid="uid://d23tiv4x6oyr3" path="res://assets/enemy_base.tscn" id="1_glp5h"]
-[ext_resource type="Script" uid="uid://ddhdf53b0f4e3" path="res://don't_stop.gd" id="2_0rfju"]
+[ext_resource type="PackedScene" uid="uid://d23tiv4x6oyr3" path="res://scenes/enemy_base.tscn" id="1_glp5h"]
+[ext_resource type="Script" uid="uid://ddhdf53b0f4e3" path="res://scripts/don't_stop.gd" id="2_0rfju"]
 [ext_resource type="Texture2D" uid="uid://d0hmeje8gsvam" path="res://assets/Sprites/DontStop.png" id="3_0rfju"]
 [ext_resource type="AudioStream" uid="uid://b2t2a2qqh1870" path="res://assets/Sounds/freesound_community-jumpscare-94984.mp3" id="4_jrct1"]
 [ext_resource type="AudioStream" uid="uid://c1c0bkpuslr32" path="res://assets/Sounds/freesound_community-running-on-metal-74791.mp3" id="5_g5y83"]
