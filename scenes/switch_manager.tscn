@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnfnxhwftqmsp"]
+
+[ext_resource type="Script" uid="uid://ctysra4rtnqi3" path="res://scenes/scripts/switch_manager.gd" id="1_77sva"]
+
+[node name="SwitchManager" type="Node3D" unique_id=198569349]
+script = ExtResource("1_77sva")
+
+[node name="TimeToDeath" type="Timer" parent="." unique_id=1382547753]
+
+[connection signal="timeout" from="TimeToDeath" to="." method="_on_time_to_death_timeout"]

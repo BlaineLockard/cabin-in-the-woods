@@ -1,8 +1,8 @@
 extends Node3D
 
-const ENEMY_SCENE = preload("res://assets/enemy_base.tscn")
-const DONTLOOK_SCENE = preload("res://assets/don't_look.tscn")
-const DONTSTOP_SCENE = preload("res://assets/don't_stop.tscn")
+const ENEMY_SCENE = preload("res://scenes/enemy_base.tscn")
+const DONTLOOK_SCENE = preload("res://scenes/don't_look.tscn")
+const DONTSTOP_SCENE = preload("res://scenes/don't_stop.tscn")
 
 # Grab a reference to the player so we can pass it to the enemy
 @export var player: Node3D

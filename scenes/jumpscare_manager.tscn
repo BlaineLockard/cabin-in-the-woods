@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ca3ma5t55ax3x"]
 
-[ext_resource type="Script" uid="uid://by0wh7fuiqv81" path="res://scripts/jumpscare_manager.gd" id="1_gkpv5"]
+[ext_resource type="Script" uid="uid://by0wh7fuiqv81" path="res://scenes/scripts/jumpscare_manager.gd" id="1_gkpv5"]
 
 [node name="JumpscareManager" type="CanvasLayer" unique_id=1307051664]
 script = ExtResource("1_gkpv5")

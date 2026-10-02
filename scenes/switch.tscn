@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bkv2p3sdnxqws"]
+
+[ext_resource type="Script" uid="uid://iy4wo47ll7ws" path="res://scenes/scripts/switch.gd" id="1_it01i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p51ki"]
+size = Vector3(0.107421875, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_it01i"]
+size = Vector3(0.36999512, 0.063964844, 0.15344238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ds62l"]
+size = Vector3(0.4753418, 1, 1)
+
+[node name="Switch" type="StaticBody3D" unique_id=314594992]
+script = ExtResource("1_it01i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1242414055]
+mesh = SubResource("BoxMesh_p51ki")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=394852102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23700199, 0, 0)
+mesh = SubResource("BoxMesh_it01i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1094189599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18151855, 0, 0)
+shape = SubResource("BoxShape3D_ds62l")

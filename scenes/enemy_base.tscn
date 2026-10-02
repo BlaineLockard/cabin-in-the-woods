@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d23tiv4x6oyr3"]
 
-[ext_resource type="Script" uid="uid://d3lm8w01h1601" path="res://scripts/enemy_base.gd" id="1_dg2mr"]
+[ext_resource type="Script" uid="uid://d3lm8w01h1601" path="res://scenes/scripts/enemy_base.gd" id="1_dg2mr"]
 [ext_resource type="Texture2D" uid="uid://srwkafyowwht" path="res://assets/Sprites/543af47e945013a2b85f042c9f4f9fbf.jpg" id="2_loibs"]
 [ext_resource type="AudioStream" uid="uid://cpwe1an40flul" path="res://assets/Sounds/soumages-jumpscare-v2-335599.mp3" id="3_8icf8"]
 
