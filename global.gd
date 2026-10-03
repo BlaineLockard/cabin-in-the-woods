@@ -32,7 +32,7 @@ func fatal_OS_error(message: String, header: String):
 	await get_tree().create_timer(0.1).timeout
 	
 	# Show the alert. The thread freezes until they click it.
-	safe_OS_message(message, header)
+	await safe_OS_message(message, header)
 	
 	# Instantly kill the game the moment they close the popup
 	OS.crash("Fatal error")

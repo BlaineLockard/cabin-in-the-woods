@@ -32,7 +32,7 @@ func hurt_player(enemy: String):
 	allowed_hits -= 1
 	if allowed_hits == 0:
 		# Just restart the game for now. I will work on the fancy stuff if I have time
-		get_tree().reload_current_scene()
+		Global.fatal_OS_error(Global.system_name, "Found you :)")
 	# Effect player if we have an effect manager
 	if effect_manager:
 		effect_manager.effect_player(enemy)
