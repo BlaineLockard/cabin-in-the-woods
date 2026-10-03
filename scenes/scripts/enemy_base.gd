@@ -48,8 +48,8 @@ func attack():
 	#TODO: call the player's function to get hurt
 	#player.get_attacked()??
 	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
-	
 	# Let everyone know that it was ME who hurt the player
+	await get_tree().create_timer(1.0).timeout
 	hurt_player.emit(name)
 	
 	despawn()

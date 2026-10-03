@@ -40,17 +40,6 @@ func attack_loop(_delta: float):
 	if player_forward.dot(dir_to_enemy) > 0.8:
 		attack()
 
-#How do we snatch the player's chain?
-func attack():
-	is_active = false
-	print(str(name) + " triggered! Applying jumpscare and penalty...")
-	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
-	
-	# Let everyone know that it was ME who hurt the player
-	hurt_player.emit(name)
-	
-	despawn()
-
 #What do we do when the player successfully survives the enemy's encounter?
 func survive():
 	is_active = false

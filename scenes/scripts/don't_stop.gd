@@ -37,15 +37,6 @@ func attack_loop(_delta: float):
 	
 	super.attack_loop(_delta)
 
-#How do we snatch the player's chain?
-func attack():
-	is_active = false
-	print(str(name) + " triggered! Applying jumpscare and penalty...")
-	player.get_node("JumpscareManager").trigger_scare(scare_image, scare_sfx)
-	hurt_player.emit(name)
-	
-	despawn()
-
 #What do we do when the player successfully survives the enemy's encounter?
 func survive():
 	is_active = false

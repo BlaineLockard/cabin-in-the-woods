@@ -38,6 +38,8 @@ func limp_player(time: float):
 	player.limp_speed = limp_move_speed
 	player.should_limp = true
 	
+	#TODO: create a global function to safely send OS messages, and send something here to tell the player that WE are crashing the game
+	
 	await get_tree().create_timer(time).timeout
 	
 	player.should_limp = false

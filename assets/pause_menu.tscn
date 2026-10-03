@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bqjsw3fhqbb8q"]
+
+[ext_resource type="Script" uid="uid://cyjox0ih3h0hg" path="res://assets/pause_menu.gd" id="1_dplge"]
+[ext_resource type="Script" uid="uid://cp2la2refqhhu" path="res://assets/audio_control.gd" id="2_q2323"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dplge"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1320021373]
+process_mode = 3
+layer = 10000000
+script = ExtResource("1_dplge")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=123744090]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="Resume" type="Button" parent="ColorRect" unique_id=291400574]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 260.0
+offset_right = 505.0
+offset_bottom = 305.0
+text = "Resume"
+
+[node name="Quit" type="Button" parent="ColorRect" unique_id=2025965521]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 317.0
+offset_right = 505.0
+offset_bottom = 362.0
+text = "Quit"
+
+[node name="Panel" type="Panel" parent="ColorRect" unique_id=1956470689]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 263.0
+offset_right = 872.0
+offset_bottom = 449.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dplge")
+
+[node name="Label" type="Label" parent="ColorRect/Panel" unique_id=98943781]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 76.0
+offset_bottom = 31.0
+text = "Options"
+
+[node name="AudioControl" type="HSlider" parent="ColorRect/Panel" unique_id=2079203408]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = 338.0
+offset_bottom = 66.0
+min_value = -80.0
+max_value = 0.0
+step = 10.0
+script = ExtResource("2_q2323")
+
+[node name="Label2" type="Label" parent="ColorRect/Panel" unique_id=664540421]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 44.0
+offset_right = 76.0
+offset_bottom = 67.0
+text = "Volume"
+
+[connection signal="pressed" from="ColorRect/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="ColorRect/Panel/AudioControl" to="ColorRect/Panel/AudioControl" method="_on_value_changed"]
