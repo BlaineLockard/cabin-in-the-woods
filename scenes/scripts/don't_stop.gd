@@ -11,7 +11,7 @@ var delayed_y_rotation: float = 0.0
 func _on_spawn():
 	#TODO: this is where the logic would go to make a UI message
 	#push UI message to stay where they are
-	call_OS_alert("Stay where you are.")
+	await call_OS_alert("Stay where you are.")
 	
 	run_sound.volume_db = -40.0
 	run_sound.play()
@@ -24,7 +24,7 @@ func attack_loop(_delta: float):
 	
 	#play the sound of running and slowly increase the volume as the duration goes on
 	var time_ratio = _time_alive / active_time
-	run_sound.volume_db = lerp(-40.0, 0.0, time_ratio)
+	run_sound.volume_db = lerp(-40.0, 10.0, time_ratio)
 	
 	#if the player ever presses run for a few seconds, they survive
 	if Input.is_action_pressed("sprint"):

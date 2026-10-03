@@ -3,6 +3,7 @@ extends Node3D
 const ENEMY_SCENE = preload("res://scenes/enemy_base.tscn")
 const DONTLOOK_SCENE = preload("res://scenes/don't_look.tscn")
 const DONTSTOP_SCENE = preload("res://scenes/don't_stop.tscn")
+const DONTHEAR_SCENE = preload("res://scenes/don't_hear.tscn")
 
 # Grab a reference to the player so we can pass it to the enemy
 @export var player: Node3D
@@ -20,6 +21,9 @@ func _input(event):
 	
 	if Input.is_action_just_released("enemy_spawn2"):
 		new_enemy = DONTSTOP_SCENE.instantiate()
+	
+	if Input.is_action_just_released("enemy_spawn3"):
+		new_enemy = DONTHEAR_SCENE.instantiate()
 	
 	if (new_enemy):
 		

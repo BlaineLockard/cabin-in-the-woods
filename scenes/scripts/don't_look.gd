@@ -15,7 +15,7 @@ func _on_spawn():
 	global_position.y = -100.0
 	#TODO: this is where the logic would go to make a UI message to use the
 	#mouse to look behind them
-	call_OS_alert("Use the mouse to look behind you!")
+	await call_OS_alert("Use the mouse to look behind you!")
 	
 	delayed_y_rotation = player.global_rotation.y
 

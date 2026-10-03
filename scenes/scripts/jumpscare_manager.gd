@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 @onready var texture = $TextureRect
-@onready var sound = $AudioStreamPlayer
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
 var base_pos: Vector2
 var is_jittering: bool = false
@@ -48,4 +48,5 @@ func trigger_scare(scare_texture: Texture2D, scare_sound: AudioStream):
 	# 5. Clean up
 	is_jittering = false
 	texture.hide()
+	sound.stop()
 	texture.position = base_pos

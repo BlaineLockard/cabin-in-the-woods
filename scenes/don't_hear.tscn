@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://x403cwim8f0j"]
+
+[ext_resource type="PackedScene" uid="uid://d23tiv4x6oyr3" path="res://scenes/enemy_base.tscn" id="1_tcv2a"]
+[ext_resource type="Script" uid="uid://bvyl7t2d0i4xb" path="res://scenes/scripts/don't_hear.gd" id="2_yqajk"]
+[ext_resource type="AudioStream" uid="uid://n04cjpsca4li" path="res://assets/Sounds/distorted-screaming-sound-39350.mp3" id="4_yqajk"]
+[ext_resource type="Texture2D" uid="uid://dlrefyvguxhpc" path="res://assets/Sprites/IMG_8110.png" id="5_vae10"]
+[ext_resource type="AudioStream" uid="uid://b2qjmorhn77nl" path="res://assets/Sounds/alesiadavina-ghostly-female-singing-voice-haunting-singsong-sfx-540772.mp3" id="6_vae10"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tcv2a"]
+radius = 1.0
+
+[node name="Don\'tHear" unique_id=1659994055 instance=ExtResource("1_tcv2a")]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("2_yqajk")
+scare_image = ExtResource("5_vae10")
+scare_sfx = ExtResource("4_yqajk")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1007113563]
+shape = SubResource("CapsuleShape3D_tcv2a")
+
+[node name="Sprite3D" parent="." index="1" unique_id=1732531675]
+transform = Transform3D(0.69, 0, 0, 0, 0.69, 0, 0, 0, 0.69, 0, 0, 0)
+texture = ExtResource("5_vae10")
+
+[node name="VoiceSound" type="AudioStreamPlayer" parent="." index="2" unique_id=343111194]
+stream = ExtResource("6_vae10")
+pitch_scale = 0.84
