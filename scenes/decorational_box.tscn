@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvbl3cho6hfcs"]
+
+[ext_resource type="Texture2D" uid="uid://bbh8dgy6fimxt" path="res://assets/textures/everytexture.com-stock-paper-texture-00042.jpg" id="1_vw8ys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq5kl"]
+albedo_texture = ExtResource("1_vw8ys")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1gj6a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87cpq"]
+
+[node name="Decorational_Box" type="Node3D" unique_id=2079110236]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=588988480]
+transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_sq5kl")
+mesh = SubResource("BoxMesh_1gj6a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1874042968]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1337137566]
+shape = SubResource("BoxShape3D_87cpq")

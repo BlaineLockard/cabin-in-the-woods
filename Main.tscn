@@ -5,11 +5,13 @@
 [ext_resource type="ArrayMesh" uid="uid://c51xda44jo4uv" path="res://assets/models/Office chair.obj" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://bny2asev8e1x3" path="res://scenes/floor.tscn" id="5_lgr22"]
 [ext_resource type="Script" uid="uid://bw2oskknreyof" path="res://temp files/example_enemy_that_reacts_to_gun.gd" id="6_lgr22"]
+[ext_resource type="ArrayMesh" uid="uid://ckgirs18viqq" path="res://assets/models/woodPallet.obj" id="7_kjvhd"]
 [ext_resource type="Texture2D" uid="uid://c3sp7aalg5gd8" path="res://temp files/chesnuts.jpg" id="7_trn2v"]
-[ext_resource type="ArrayMesh" uid="uid://de84kb8x0kea5" path="res://assets/models/Forklift.obj" id="8_trn2v"]
 [ext_resource type="ArrayMesh" uid="uid://3xouakc0u15b" path="res://assets/models/17370_Power_belt_conveyor_v1.obj" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://clwls3qvu465u" path="res://scenes/forklift.tscn" id="13_5tuhn"]
 [ext_resource type="PackedScene" uid="uid://bkv2p3sdnxqws" path="res://scenes/switch.tscn" id="14_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://dnfnxhwftqmsp" path="res://scenes/switch_manager.tscn" id="15_j4qnp"]
+[ext_resource type="PackedScene" uid="uid://bvbl3cho6hfcs" path="res://scenes/decorational_box.tscn" id="18_2gh4u"]
 [ext_resource type="PackedScene" uid="uid://cv2dm00uayxc2" path="res://scenes/filled_shelf.tscn" id="20_2gh4u"]
 [ext_resource type="PackedScene" uid="uid://d3dapie8w0gbf" path="res://scenes/alt_shelf.tscn" id="21_devvj"]
 [ext_resource type="PackedScene" uid="uid://c4383d24j6qtu" path="res://scenes/wall_shelf.tscn" id="22_3b0ty"]
@@ -104,12 +106,6 @@ size = Vector3(6.4724646, 4.3881073, 0.18758218)
 [sub_resource type="BoxShape3D" id="BoxShape3D_87cpq"]
 margin = 0.0
 size = Vector3(6.4724646, 4.3881073, 0.18758218)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_si2nl"]
-size = Vector3(536.7488, 525.9797, 264.2113)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vi5kq"]
-size = Vector3(536.7488, 525.9797, 264.2113)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uhdyr"]
 size = Vector3(584.11017, 274.25052, 160.11374)
@@ -503,13 +499,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w5150")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snjjq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_nxfnc"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v4g1b"]
-size = Vector3(2.11, 2.11, 2.11)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_qmgw1"]
 size = Vector3(4.859678, 3.1480665, 4.4179344)
 
@@ -534,7 +523,6 @@ visible = false
 
 [node name="THE SUN (temp)" type="DirectionalLight3D" parent="env" unique_id=1268182148]
 transform = Transform3D(1, 0, 0, 0, -0.1824227, 0.98322016, 0, -0.98322016, -0.1824227, 0, 72.99162, 55.173756)
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1438385980]
 environment = SubResource("Environment_glv2v")
@@ -554,7 +542,7 @@ mesh = ExtResource("4_cm0pq")
 [node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/OfficeChair" unique_id=603383122]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/OfficeChair/StaticBody3D" unique_id=630671038]
-transform = Transform3D(0.999921, 0, 3.3527613e-08, 0, 1.9589249, 0, -1.0346994e-06, 0, 0.9999181, 4.2636757, 477.44864, -3.6795654)
+transform = Transform3D(0.999921, 0, 1.0346964e-06, 0, 1.9589249, 0, -1.0346994e-06, 0, 0.9999181, 4.2636757, 477.44864, -3.6795654)
 shape = SubResource("BoxShape3D_ucjdu")
 
 [node name="OfficeChair6" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here" unique_id=1710030010]
@@ -938,156 +926,6 @@ shape = SubResource("BoxShape3D_87cpq")
 
 [node name="Objects" type="Node3D" parent="NavRegion (Put all colliding bodies in here" unique_id=883177376]
 
-[node name="Forklift" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=100469879]
-transform = Transform3D(-3.059798e-10, 0, 0.009393205, 0, 0.007000001, 0, -0.007000001, 0, -4.1059003e-10, -15.556545, 0.08058405, 104.312836)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift" unique_id=1061904755]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift/StaticBody3D" unique_id=1382538865]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift2" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1905701933]
-transform = Transform3D(-3.0597974e-10, 0, -0.009393205, 0, 0.007000001, 0, 0.007000001, 0, -4.1059003e-10, -22.99602, 0.08058405, 104.34916)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift2" unique_id=1759913156]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift2/StaticBody3D" unique_id=1348182740]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift12" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1592939077]
-transform = Transform3D(-0.006430774, 0, -0.003710299, 0, 0.0070000025, 0, 0.0027649875, 0, -0.008629368, 92.22763, 0.08058596, -20.524931)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift12" unique_id=391148291]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift12/StaticBody3D" unique_id=1132922576]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift11" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=455030219]
-transform = Transform3D(-0.006719791, 0, -0.0026310654, 0, 0.007000004, 0, 0.0019607232, 0, -0.009017194, 69.86804, 0.080585, 12.261306)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift11" unique_id=1964088600]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift11/StaticBody3D" unique_id=1213369880]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift13" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=110085450]
-transform = Transform3D(0.005762561, 0, -0.005332696, 0, 0.0070000035, 0, 0.0039740293, 0, 0.0077327006, 57.220753, 0.08058691, 16.000149)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift13" unique_id=2061133901]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift13/StaticBody3D" unique_id=402291431]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift19" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=468307417]
-transform = Transform3D(0.006777793, 0, -0.0023479331, 0, 0.007000004, 0, 0.0017497251, 0, 0.009095026, 72.364586, 0.08058596, 47.36419)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift19" unique_id=1042689442]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift19/StaticBody3D" unique_id=838470954]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift18" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1815758090]
-transform = Transform3D(0.0009995145, 0, 6.232013e-05, 0, 0.001, 0, -3.1160063e-05, 0, 0.001999029, -30.991632, 1.0979409, -25.311861)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift18" unique_id=402039853]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift18/StaticBody3D" unique_id=600276297]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_vi5kq")
-
-[node name="Forklift14" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1345706500]
-transform = Transform3D(0.0018032021, 0, -0.0090761995, 0, 0.0070000035, 0, 0.006763763, 0, 0.0024196897, 55.91828, 0.08058691, 7.6660404)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift14" unique_id=1018893785]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift14/StaticBody3D" unique_id=1964277764]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift5" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1029396826]
-transform = Transform3D(-0.0069830026, 0, 0.0006542186, 0, 0.007000001, 0, -0.00048753657, 0, -0.009370395, -30.480104, 0.08058596, 87.34146)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift5" unique_id=89560104]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift5/StaticBody3D" unique_id=1315063242]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift4" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1637082181]
-transform = Transform3D(-0.0043623648, 0, -0.007346112, 0, 0.007000001, 0, 0.0054744673, 0, -0.005853797, -20.797451, 0.08058596, 88.03395)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift4" unique_id=407787176]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift4/StaticBody3D" unique_id=1463110368]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift15" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=394509604]
-transform = Transform3D(-0.0063602054, 0, -0.0039232234, 0, 0.007000001, 0, 0.0029236632, 0, -0.008534672, 13.986896, 0.08058596, 85.61221)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift15" unique_id=333494260]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift15/StaticBody3D" unique_id=676496832]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift16" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=569235956]
-transform = Transform3D(0.000648136, 0, 0.009352854, 0, 0.007000002, 0, -0.006969931, 0, 0.00086972537, 6.539483, 0.08058596, 92.955345)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift16" unique_id=572621689]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift16/StaticBody3D" unique_id=881724441]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift17" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=684559282]
-transform = Transform3D(-0.0054117856, 0, 0.0059578232, 0, 0.007000002, 0, -0.0044398876, 0, -0.007262, 19.460651, 0.08058596, 95.13629)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift17" unique_id=1313393010]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift17/StaticBody3D" unique_id=1723917219]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift23" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=638505743]
-transform = Transform3D(-0.00014626258, 0, 0.009391155, 0, 0.007000002, 0, -0.006998473, 0, -0.00019626832, 40.625748, 0.08058596, 77.15071)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift23" unique_id=44666819]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift23/StaticBody3D" unique_id=1938461973]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
-[node name="Forklift3" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1102437566]
-transform = Transform3D(0.0029076769, 0, -0.008544499, 0, 0.007000001, 0, 0.0063675293, 0, 0.0039017715, -29.342009, 0.08058405, 102.62008)
-mesh = ExtResource("8_trn2v")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift3" unique_id=591166987]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Forklift3/StaticBody3D" unique_id=1461418043]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
-shape = SubResource("BoxShape3D_si2nl")
-
 [node name="Conveyor Belt" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1057774695]
 transform = Transform3D(0.031274844, 0, 0, 0, -5.4237903e-10, 0.010078634, 0, -0.012408186, -4.4055112e-10, 73.00493, 0.034460157, 101.83901)
 mesh = ExtResource("9_03owx")
@@ -1151,6 +989,7 @@ shape = SubResource("BoxShape3D_uhdyr")
 [node name="WoodPallet2" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=629768294]
 transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 26.74924, 0.13444987, 81.3296)
 material_override = SubResource("StandardMaterial3D_devvj")
+mesh = ExtResource("7_kjvhd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/WoodPallet2" unique_id=1114233094]
 
@@ -1161,6 +1000,7 @@ shape = SubResource("BoxShape3D_3wdu0")
 [node name="WoodPallet3" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1221982980]
 transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 26.094992, 0.13444987, 101.84227)
 material_override = SubResource("StandardMaterial3D_3b0ty")
+mesh = ExtResource("7_kjvhd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/WoodPallet3" unique_id=1958817588]
 
@@ -1171,6 +1011,7 @@ shape = SubResource("BoxShape3D_3wdu0")
 [node name="WoodPallet4" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=277741424]
 transform = Transform3D(6.2288725e-09, -1.0788724e-08, -0.095, 0.0475, 0.08227241, -6.228873e-09, 0.08227241, -0.0475, 1.0788725e-08, 66.52994, 1.0456222, 105.92962)
 material_override = SubResource("StandardMaterial3D_3b0ty")
+mesh = ExtResource("7_kjvhd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects/WoodPallet4" unique_id=1669790494]
 
@@ -1329,105 +1170,6 @@ mesh = SubResource("ArrayMesh_gb15f")
 [node name="CoffeeCup" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=398418979]
 transform = Transform3D(-0.019830724, 0, 0.0025966077, 0, 0.02, 0, -0.0025966077, 0, -0.019830724, 13.567818, 1.104099, -25.346643)
 
-[node name="Decorational Box" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1666930885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.94652, 1.0314708, 43.51611)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box" unique_id=557585840]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box" unique_id=843347289]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box2" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1289436028]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.94652, 1.0314708, 41.12096)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box2" unique_id=297569877]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box2" unique_id=583070885]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box4" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1177836933]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.109047, 1.5908227, 81.28547)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box4" unique_id=1038996361]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box4" unique_id=2057547143]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box5" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1860775032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.392845, 2.3071227, 101.794174)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box5" unique_id=904458891]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box5" unique_id=1759943485]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box6" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1661188510]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0642, 1.0239167, 60.87906)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box6" unique_id=1028200283]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box6" unique_id=26132227]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box7" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1261135459]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.857254, 1.0239162, 46.212082)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box7" unique_id=168877972]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box7" unique_id=1436004392]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box8" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=746316694]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.343292, 1.0239162, 48.09221)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box8" unique_id=801501373]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box8" unique_id=666591313]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box9" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=348855619]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.06299, 2.2200556, 51.07817)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box9" unique_id=330681096]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box9" unique_id=368864641]
-shape = SubResource("BoxShape3D_v4g1b")
-
-[node name="Decorational Box3" type="StaticBody3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=855219881]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.76605, 3.1077251, 42.29806)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box3" unique_id=1815922968]
-transform = Transform3D(2.11, 0, 0, 0, 2.11, 0, 0, 0, 2.11, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_snjjq")
-mesh = SubResource("BoxMesh_nxfnc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion (Put all colliding bodies in here/Objects/Decorational Box3" unique_id=140693439]
-shape = SubResource("BoxShape3D_v4g1b")
-
 [node name="Pallet4Box" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1429627650 instance=ExtResource("30_5mvff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.986137, 0.47566605, 69.444496)
 
@@ -1458,6 +1200,48 @@ transform = Transform3D(0.0036937322, 0, -0.034804545, 0, 0.035, 0, 0.034804545,
 [node name="Cup4" type="MeshInstance3D" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1537721624]
 transform = Transform3D(0.029445414, -0.01034266, 0.015842887, 0.009108006, 0.033436943, 0.004900495, -0.016583482, 0, 0.030821877, 15.103621, 1.2142051, -25.395596)
 
+[node name="Forklift6" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=48917187 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.29045567, 0, -0.95688856, 0, 1, 0, 0.95688856, 0, 0.29045567, 92.22763, 0.08058596, -20.524931)
+
+[node name="Forklift7" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=361413684 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.30607614, 0, -0.95200706, 0, 1, 0, 0.95200706, 0, 0.30607614, 69.86804, 0.080585, 12.261306)
+
+[node name="Forklift8" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1339285967 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.5763538, 0, 0.81720036, 0, 1, 0, -0.81720036, 0, 0.5763538, 57.220753, 0.08058691, 16.000149)
+
+[node name="Forklift9" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1534016807 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.96868, 0, 0.24831222, 0, 1, 0, -0.24831222, 0, 0.96868, 55.91828, 0.08058691, 7.6660404)
+
+[node name="Forklift10" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=290797018 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.1681412, 0, 0.9857629, 0, 1, 0, -0.9857629, 0, 0.1681412, 72.364586, 0.08058596, 47.36419)
+
+[node name="Forklift20" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1392765469 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 40.993298, -0.059699774, 77.41507)
+
+[node name="Forklift21" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=2045717097 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(-0.64948756, 0, -0.7603722, 0, 1, 0, 0.7603722, 0, -0.64948756, 19.460651, 0.08058596, 95.13629)
+
+[node name="Forklift22" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=156483773 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.4066031, 0, -0.9136049, 0, 1, 0, 0.9136049, 0, 0.4066031, 13.986896, 0.08058596, 85.61221)
+
+[node name="Forklift24" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=155376214 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.539483, 0.08058596, 92.955345)
+
+[node name="Forklift25" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=622137862 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -15.556545, 0.08058405, 104.312836)
+
+[node name="Forklift26" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1955443298 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.044159, -0.049846172, 104.19881)
+
+[node name="Forklift27" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=549857868 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.9056243, 0, 0.42408103, 0, 1, 0, -0.42408103, 0, 0.9056243, -29.319197, -0.09948444, 102.481674)
+
+[node name="Forklift28" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=863440565 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30.480104, 0.08058596, 87.34146)
+
+[node name="Forklift29" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=918421272 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(0.7785327, 0, -0.62760407, 0, 1, 0, 0.62760407, 0, 0.7785327, -20.797451, 0.08058596, 88.03395)
+
 [node name="Example enemy that reacts to gun" type="Node3D" parent="." unique_id=811180664 groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.17768764, 1.0745363, -5.921221)
 script = ExtResource("6_lgr22")
@@ -1479,3 +1263,33 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.63
 [node name="SwitchManager" parent="." unique_id=198569349 node_paths=PackedStringArray("switches", "light") instance=ExtResource("15_j4qnp")]
 switches = [NodePath("../Switch"), NodePath("../Switch2"), NodePath("../Switch3")]
 light = NodePath("../light/SpotLight3D")
+
+[node name="Decorational_Box" parent="." unique_id=2079110236 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.025974, 1.0903444, 60.853287)
+
+[node name="Decorational_Box2" parent="." unique_id=776149527 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.367676, 1.027561, 48.12117)
+
+[node name="Decorational_Box3" parent="." unique_id=1581773369 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.85537, 1.1058979, 46.240616)
+
+[node name="Decorational_Box4" parent="." unique_id=2031992866 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.079155, 2.3347206, 51.1106)
+
+[node name="Decorational_Box5" parent="." unique_id=876737481 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.782505, 2.376264, 101.86956)
+
+[node name="Decorational_Box6" parent="." unique_id=1265750347 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.121677, 1.6921153, 81.28617)
+
+[node name="Decorational_Box7" parent="." unique_id=1707654218 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.95484, 1.042113, 43.478043)
+
+[node name="Decorational_Box8" parent="." unique_id=1999369762 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.87651, 1.042113, 41.189457)
+
+[node name="Decorational_Box9" parent="." unique_id=667828438 instance=ExtResource("18_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.831795, 3.1521125, 42.226833)
+
+[node name="Forklift" parent="." unique_id=1123144071 instance=ExtResource("13_5tuhn")]
+transform = Transform3D(-3.715468e-09, 0, 0.085, 0, 0.085, 0, -0.085, 0, -3.715468e-09, -30.991632, 1.0979409, -25.311861)

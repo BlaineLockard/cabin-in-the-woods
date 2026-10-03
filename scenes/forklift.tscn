@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://clwls3qvu465u"]
+
+[ext_resource type="ArrayMesh" uid="uid://de84kb8x0kea5" path="res://assets/models/Forklift.obj" id="1_waasx"]
+[ext_resource type="Texture2D" uid="uid://dm77ctmhff1k3" path="res://assets/textures/stainless-steel.jpg" id="2_u4wsy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bor5y"]
+albedo_color = Color(1, 0.972549, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a8xe"]
+albedo_texture = ExtResource("2_u4wsy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orpi7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_seccm"]
+size = Vector3(536.7488, 525.9797, 264.2113)
+
+[node name="Forklift" type="Node3D" unique_id=48917187]
+
+[node name="Forklift14" type="MeshInstance3D" parent="." unique_id=1177426800]
+transform = Transform3D(-8.83115e-06, 0, -0.009393197, 0, 0.0070000035, 0, 0.006999996, 0, -1.185271e-05, -0.022165298, 0.019647121, 0.009533882)
+mesh = ExtResource("1_waasx")
+surface_material_override/0 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/1 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/2 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/3 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/4 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/5 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/7 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/8 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/9 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/10 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/11 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/12 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/13 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/14 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/15 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/16 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/17 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/18 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/19 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/20 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/21 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/22 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/23 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/24 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/25 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/26 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/27 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/28 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/29 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/30 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/31 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/32 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/33 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/34 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/35 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/36 = SubResource("StandardMaterial3D_orpi7")
+surface_material_override/37 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/38 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/39 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/40 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/41 = SubResource("StandardMaterial3D_0a8xe")
+surface_material_override/42 = SubResource("StandardMaterial3D_bor5y")
+surface_material_override/43 = SubResource("StandardMaterial3D_0a8xe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forklift14" unique_id=1574580088]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forklift14/StaticBody3D" unique_id=135613872]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000001, 102.99878, 262.4908, -0.43121338)
+shape = SubResource("BoxShape3D_seccm")
