@@ -21,32 +21,32 @@ layer = 10000000
 script = ExtResource("1_dplge")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=123744090]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1600.0
+offset_bottom = 900.0
 color = Color(0, 0, 0, 0.60784316)
 
 [node name="Resume" type="Button" parent="ColorRect" unique_id=291400574]
 layout_mode = 0
-offset_left = 318.0
-offset_top = 260.0
-offset_right = 505.0
-offset_bottom = 305.0
+offset_left = 575.0
+offset_top = 366.0
+offset_right = 762.0
+offset_bottom = 411.0
 text = "Resume"
 
 [node name="Quit" type="Button" parent="ColorRect" unique_id=2025965521]
 layout_mode = 0
-offset_left = 318.0
-offset_top = 317.0
-offset_right = 505.0
-offset_bottom = 362.0
+offset_left = 575.0
+offset_top = 423.0
+offset_right = 762.0
+offset_bottom = 468.0
 text = "Quit"
 
 [node name="Panel" type="Panel" parent="ColorRect" unique_id=1956470689]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 263.0
-offset_right = 872.0
-offset_bottom = 449.0
+offset_left = 779.0
+offset_top = 369.0
+offset_right = 1129.0
+offset_bottom = 555.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dplge")
 
 [node name="Label" type="Label" parent="ColorRect/Panel" unique_id=98943781]
@@ -77,6 +77,6 @@ offset_bottom = 67.0
 text = "Volume"
 
 [connection signal="pressed" from="ColorRect/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_resume_pressed"]
 [connection signal="value_changed" from="ColorRect/Panel/AudioControl" to="ColorRect/Panel/AudioControl" method="_on_value_changed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5e2o2vgmwuxf"]
 
-[ext_resource type="Script" path="res://game_end_manager.gd" id="1_348vg"]
+[ext_resource type="Script" uid="uid://c633hon3jem3c" path="res://scenes/scripts/game_end_manager.gd" id="1_0k52n"]
 
 [node name="GameEndManager" type="Node3D" unique_id=1815310578]
-script = ExtResource("1_348vg")
+script = ExtResource("1_0k52n")

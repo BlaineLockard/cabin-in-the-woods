@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://tyir8lwxhtde"]
 
 [ext_resource type="PackedScene" uid="uid://cb76138h5aq4m" path="res://scenes/Player.tscn" id="1_gxgjs"]
-[ext_resource type="Script" uid="uid://cf3fc3njk7kg5" path="res://scenes/scripts/tw_debug.gd" id="1_j6yhs"]
+[ext_resource type="Script" uid="uid://cf3fc3njk7kg5" path="res://scene_root_debug.gd" id="1_j6yhs"]
+[ext_resource type="PackedScene" uid="uid://bqjsw3fhqbb8q" path="res://assets/pause_menu.tscn" id="2_c2v6l"]
 [ext_resource type="PackedScene" uid="uid://b5e2o2vgmwuxf" path="res://scenes/game_end_manager.tscn" id="3_uvimy"]
 [ext_resource type="PackedScene" uid="uid://bnvvl5xal8rql" path="res://scenes/effect_manager.tscn" id="4_cslx3"]
 
@@ -12,6 +13,8 @@ ambient_light_source = 2
 [node name="TwDebug" type="Node3D" unique_id=268534225 node_paths=PackedStringArray("player")]
 script = ExtResource("1_j6yhs")
 player = NodePath("player")
+
+[node name="PauseMenu" parent="." unique_id=1320021373 instance=ExtResource("2_c2v6l")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=863115477]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 0)

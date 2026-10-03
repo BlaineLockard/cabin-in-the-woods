@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bnvvl5xal8rql"]
 
-[ext_resource type="Script" path="res://effect_manager.gd" id="1_apoux"]
+[ext_resource type="Script" uid="uid://lgjqg5stm0i0" path="res://scenes/scripts/effect_manager.gd" id="1_gddvk"]
 
 [node name="EffectManager" type="Node3D" unique_id=2141398320]
-script = ExtResource("1_apoux")
+script = ExtResource("1_gddvk")
