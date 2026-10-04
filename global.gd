@@ -2,6 +2,7 @@ extends Node
 
 #note: this is in db. 0.0 db is the default volume amount.
 var current_player_volume: float = 0.0
+var power_on: bool = false
 
 var system_name: String = "Player"
 
