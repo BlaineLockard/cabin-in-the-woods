@@ -5,9 +5,9 @@ class_name EffectManager extends Node3D
 ## How far the player can see when blinded
 @export var blinded_vision_range: float = 15.0
 ## How fast the player will move when movement hindered[br]For reference, base walk speed is [b]5.0
-@export var limp_move_speed = 2.5
+@export var limp_move_speed = 3.5
 
-const BASE_EFFECT_LENGTH: float = 15.0
+const BASE_EFFECT_LENGTH: float = 30.0
 
 var player: CharacterController
 
@@ -24,7 +24,7 @@ func effect_player(enemy_name: String):
 			blind_player(BASE_EFFECT_LENGTH)
 		"don'tstop":
 			limp_player(BASE_EFFECT_LENGTH)
-		"theonethatwillbebasedoffofaudiopleasechangethistoitsactualnamewhen/ifwemakeitcuzimnotgoodatnamingthings":
+		"don'thear":
 			muffle_audio(BASE_EFFECT_LENGTH)
 		_:
 			push_error("\"", enemy_name, "\" attacked player with no effect to give.")
