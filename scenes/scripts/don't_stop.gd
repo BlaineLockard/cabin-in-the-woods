@@ -11,7 +11,7 @@ var delayed_y_rotation: float = 0.0
 func _on_spawn():
 	#TODO: this is where the logic would go to make a UI message
 	#push UI message to stay where they are
-	await call_OS_alert("Stay where you are.")
+	#await call_OS_alert("Stay where you are.")
 	
 	run_sound.volume_db = -40.0
 	run_sound.play()

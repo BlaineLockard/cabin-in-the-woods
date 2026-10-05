@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d23tiv4x6oyr3" path="res://scenes/enemy_base.tscn" id="1_tcv2a"]
 [ext_resource type="Script" uid="uid://bvyl7t2d0i4xb" path="res://scenes/scripts/don't_hear.gd" id="2_yqajk"]
+[ext_resource type="Texture2D" uid="uid://blbc11u7q6ckp" path="res://assets/Sprites/dontheartest3.png" id="3_vrtno"]
 [ext_resource type="AudioStream" uid="uid://n04cjpsca4li" path="res://assets/Sounds/distorted-screaming-sound-39350.mp3" id="4_yqajk"]
 [ext_resource type="Texture2D" uid="uid://dlrefyvguxhpc" path="res://assets/Sprites/IMG_8110.png" id="5_vae10"]
 [ext_resource type="AudioStream" uid="uid://b2qjmorhn77nl" path="res://assets/Sounds/alesiadavina-ghostly-female-singing-voice-haunting-singsong-sfx-540772.mp3" id="6_vae10"]
@@ -14,7 +15,7 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("2_yqajk")
-scare_image = ExtResource("5_vae10")
+scare_image = ExtResource("3_vrtno")
 scare_sfx = ExtResource("4_yqajk")
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1007113563]

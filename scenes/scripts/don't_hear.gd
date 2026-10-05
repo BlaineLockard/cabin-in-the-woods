@@ -7,13 +7,12 @@ class_name DontHear
 func _on_spawn():
 	#TODO: this is where the logic would go to make a UI message
 	#push UI message to stay where they are
+	#go 100m into the ground so we no see
+	global_position.y = -100.0
 	await call_OS_alert("Pause the game and increase your volume to hear game sounds! :D")
 	
 	voice_sound.volume_db = -40.0
 	voice_sound.play()
-	
-	#go 100m into the ground so we no see
-	global_position.y = -100.0
 
 
 func attack_loop(_delta: float):

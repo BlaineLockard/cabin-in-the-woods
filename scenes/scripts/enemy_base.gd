@@ -103,3 +103,6 @@ func call_OS_alert(message: String) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	
+	for action in InputMap.get_actions():
+		Input.action_release(action)
+	

@@ -43,7 +43,6 @@ func _process(delta: float) -> void:
 	spawn_timer -= delta
 	
 	# Shrink the cooldown by 1 second for every 10 seconds they survive.
-	# The max() function strictly prevents it from ever going below your MIN_SPAWN_DELAY.
 	current_base_delay = max(MIN_SPAWN_DELAY, 20.0 - (time_survived / 10.0))
 
 	# 3. Fire the Spawn
@@ -55,36 +54,35 @@ func _process(delta: float) -> void:
 		var random_scene = standard_enemies.pick_random()
 		spawn_entity(random_scene)
 
-# Helper function to keep things DRY (Don't Repeat Yourself)
+
 func spawn_entity(enemy_scene):
 	var new_enemy = enemy_scene.instantiate()
 	add_child(new_enemy)
 	
-	# Pass the 10.0 active time just like your debug script
 	new_enemy.spawn(player, 10.0)
-	print("System spawned an entity!")
+	print("System spawned an entity," + new_enemy.name)
 
-func _input(event):
-	var new_enemy = null
-	
-	if Input.is_action_just_released("enemy_spawn1"):
-		new_enemy = DONTLOOK_SCENE.instantiate()
-	
-	if Input.is_action_just_released("enemy_spawn2"):
-		new_enemy = DONTSTOP_SCENE.instantiate()
-	
-	if Input.is_action_just_released("enemy_spawn3"):
-		new_enemy = DONTHEAR_SCENE.instantiate()
-	
-	if Input.is_action_just_released("enemy_spawn4"):
-		new_enemy = DONTFORGET_SCENE.instantiate()
-	
-	if Input.is_action_just_released("power_toggle"):
-		print("Toggling the power!")
-		Global.power_on = !Global.power_on
-		print("New state: ", Global.power_on)
-	
-	
-	if (new_enemy):
-		add_child(new_enemy)
-		new_enemy.spawn(player, 10.0)
+#func _input(event):
+	#var new_enemy = null
+	#
+	#if Input.is_action_just_released("enemy_spawn1"):
+		#new_enemy = DONTLOOK_SCENE.instantiate()
+	#
+	#if Input.is_action_just_released("enemy_spawn2"):
+		#new_enemy = DONTSTOP_SCENE.instantiate()
+	#
+	#if Input.is_action_just_released("enemy_spawn3"):
+		#new_enemy = DONTHEAR_SCENE.instantiate()
+	#
+	#if Input.is_action_just_released("enemy_spawn4"):
+		#new_enemy = DONTFORGET_SCENE.instantiate()
+	#
+	#if Input.is_action_just_released("power_toggle"):
+		#print("Toggling the power!")
+		#Global.power_on = !Global.power_on
+		#print("New state: ", Global.power_on)
+	#
+	#
+	#if (new_enemy):
+		#add_child(new_enemy)
+		#new_enemy.spawn(player, 10.0)
