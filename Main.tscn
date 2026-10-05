@@ -3,12 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cb76138h5aq4m" path="res://scenes/Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cf3fc3njk7kg5" path="res://scene_root_debug.gd" id="1_kjvhd"]
 [ext_resource type="ArrayMesh" uid="uid://qsov8wi283ok" path="res://assets/models/Desk.obj" id="2_r0du0"]
+[ext_resource type="Script" uid="uid://df6g683mohhva" path="res://light_flicker.gd" id="2_sph85"]
 [ext_resource type="Texture2D" uid="uid://cqlj1frh7ptp4" path="res://assets/textures/brown-wood-textured-background-with-design-space.jpg" id="3_gb15f"]
 [ext_resource type="PackedScene" uid="uid://bny2asev8e1x3" path="res://scenes/floor.tscn" id="5_lgr22"]
-[ext_resource type="Script" uid="uid://bw2oskknreyof" path="res://temp files/example_enemy_that_reacts_to_gun.gd" id="6_lgr22"]
 [ext_resource type="Texture2D" uid="uid://dm77ctmhff1k3" path="res://assets/textures/stainless-steel.jpg" id="6_sph85"]
 [ext_resource type="PackedScene" uid="uid://bku0sij2vt24d" path="res://scenes/pallet.tscn" id="7_5mvff"]
-[ext_resource type="Texture2D" uid="uid://c3sp7aalg5gd8" path="res://temp files/chesnuts.jpg" id="7_trn2v"]
 [ext_resource type="ArrayMesh" uid="uid://3xouakc0u15b" path="res://assets/models/17370_Power_belt_conveyor_v1.obj" id="9_03owx"]
 [ext_resource type="PackedScene" uid="uid://clwls3qvu465u" path="res://scenes/forklift.tscn" id="13_5tuhn"]
 [ext_resource type="PackedScene" uid="uid://bh061r8ob6ra4" path="res://assets/how_to_book.tscn" id="14_2gh4u"]
@@ -33,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dqr6tqmowv8gy" path="res://scenes/map.tscn" id="28_w3rk5"]
 [ext_resource type="PackedScene" uid="uid://ddmymlj4eeem5" path="res://scenes/pallet_4_box.tscn" id="30_5mvff"]
 [ext_resource type="PackedScene" uid="uid://c8yy63a34kfvs" path="res://scenes/laptop.tscn" id="30_oye8v"]
+[ext_resource type="PackedScene" uid="uid://bnvvl5xal8rql" path="res://scenes/effect_manager.tscn" id="32_sph85"]
 [ext_resource type="Script" uid="uid://rj7dgt47w3x2" path="res://safe_zone.gd" id="34_sph85"]
 [ext_resource type="PackedScene" uid="uid://b5e2o2vgmwuxf" path="res://scenes/game_end_manager.tscn" id="35_o7g6l"]
 
@@ -925,23 +925,19 @@ albedo_texture = ExtResource("6_sph85")
 [sub_resource type="BoxShape3D" id="BoxShape3D_pljue"]
 size = Vector3(559.67505, 945.9577, 641.49805)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37v28"]
-albedo_texture = ExtResource("7_trn2v")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_si2nl"]
 size = Vector3(6.293396, 4.203064, 5.9520874)
 
-[node name="Root" type="Node3D" unique_id=1121203160 node_paths=PackedStringArray("player")]
+[node name="Main" type="Node3D" unique_id=1121203160 node_paths=PackedStringArray("player")]
 script = ExtResource("1_kjvhd")
 player = NodePath("player")
 
-[node name="light" type="CSGSphere3D" parent="." unique_id=1990965422]
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1636245716]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.31923628, 4.5990405, -23.668745)
-radius = 0.25636256
-
-[node name="SpotLight3D" type="SpotLight3D" parent="light" unique_id=1636245716]
-spot_range = 19.55685
+shadow_enabled = true
+spot_range = 10.561
 spot_angle = 62.842216
+script = ExtResource("2_sph85")
 
 [node name="env" type="Node3D" parent="." unique_id=888805762]
 
@@ -951,6 +947,7 @@ visible = false
 
 [node name="THE SUN (temp)" type="DirectionalLight3D" parent="env" unique_id=1268182148]
 transform = Transform3D(1, 0, 0, 0, -0.1824227, 0.98322016, 0, -0.98322016, -0.1824227, 0, 72.99162, 55.173756)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1438385980]
 environment = SubResource("Environment_glv2v")
@@ -958,6 +955,7 @@ environment = SubResource("Environment_glv2v")
 [node name="player" parent="." unique_id=1374814702 instance=ExtResource("1_glv2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17768764, 0, -21.621607)
 canJump = false
+speedSprint = 7.1
 
 [node name="NavRegion (Put all colliding bodies in here" type="NavigationRegion3D" parent="." unique_id=712139461]
 navigation_mesh = SubResource("NavigationMesh_adpiu")
@@ -1522,37 +1520,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4410276, 1.0404596, -25.24
 [node name="Laptop" parent="NavRegion (Put all colliding bodies in here/Objects" unique_id=1956733319 instance=ExtResource("30_oye8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7722299, 1.1235393, -25.040823)
 
-[node name="Example enemy that reacts to gun" type="Node3D" parent="." unique_id=811180664 groups=["Enemy"]]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.17768764, 1.0745363, -5.921221)
-script = ExtResource("6_lgr22")
-
-[node name="Anuc Cube" type="CSGBox3D" parent="Example enemy that reacts to gun" unique_id=1486441161]
-transform = Transform3D(-4.371139e-08, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -1, -4.371139e-08, -4.3711385e-08, 6.1804194, -19.888012, -0.76258767)
-size = Vector3(1, 0.10449219, 1)
-material = SubResource("StandardMaterial3D_37v28")
-
 [node name="Switch" parent="." unique_id=1811554746 instance=ExtResource("14_c2ibq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.03088, 2.310998, 40.71221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.97366, 1.5260547, 24.178925)
 
 [node name="Switch2" parent="." unique_id=314594992 instance=ExtResource("14_c2ibq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.14862281, 1.5260547, -23.441927)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -26.34244, 1.5260547, 108.21147)
 
 [node name="Switch3" parent="." unique_id=1622729204 instance=ExtResource("14_c2ibq")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 61.154495, 2.0832777, 57.859436)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 102.20544, 1.5260547, -9.104761)
 
 [node name="SwitchManager" parent="." unique_id=198569349 node_paths=PackedStringArray("switches", "light") instance=ExtResource("15_j4qnp")]
+allowed_lightless_time = 15.0
 switches = [NodePath("../Switch"), NodePath("../Switch2"), NodePath("../Switch3")]
-light = NodePath("../light/SpotLight3D")
+light = NodePath("../SpotLight3D")
+
+[node name="GameEndManager" parent="." unique_id=1815310578 groups=["GameEndManager"] instance=ExtResource("35_o7g6l")]
+
+[node name="EffectManager" parent="GameEndManager" unique_id=2141398320 instance=ExtResource("32_sph85")]
 
 [node name="PauseMenu" parent="." unique_id=1320021373 instance=ExtResource("19_5tuhn")]
 
-[node name="Safe Zone" type="Area3D" parent="." unique_id=2007816349 node_paths=PackedStringArray("hitpoints")]
+[node name="Safe Zone" type="Area3D" parent="." unique_id=2007816349 node_paths=PackedStringArray("hitpoints", "desk_light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28330612, 0, -21.9012)
 script = ExtResource("34_sph85")
 hitpoints = NodePath("../GameEndManager")
+desk_light = NodePath("../SpotLight3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Safe Zone" unique_id=382858041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25357056, 1.8710022, -0.81796265)
 shape = SubResource("BoxShape3D_si2nl")
-
-[node name="GameEndManager" parent="." unique_id=1815310578 instance=ExtResource("35_o7g6l")]

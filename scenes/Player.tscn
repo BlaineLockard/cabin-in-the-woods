@@ -31,6 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47440428, -0.29796803, -0.
 
 [node name="Weapon" parent="head/Camera3D" unique_id=1213850990 instance=ExtResource("3_qu4a1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474, -0.298, -0.203)
+visible = false
 
 [node name="InteractionProvider" parent="head/Camera3D" unique_id=1517577042 instance=ExtResource("4_cw2d6")]
 interact_range = 3.0

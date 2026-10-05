@@ -7,4 +7,7 @@ script = ExtResource("1_77sva")
 
 [node name="TimeToDeath" type="Timer" parent="." unique_id=1382547753]
 
+[node name="flip_switch_timer" type="Timer" parent="." unique_id=105338769]
+
 [connection signal="timeout" from="TimeToDeath" to="." method="_on_time_to_death_timeout"]
+[connection signal="timeout" from="flip_switch_timer" to="." method="_on_flip_switch_timer_timeout"]
