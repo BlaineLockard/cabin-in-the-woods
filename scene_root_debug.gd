@@ -37,6 +37,9 @@ func _process(delta: float) -> void:
 	# If the power is out, halt the standard spawn loop so they only deal with the boss
 	if not Global.power_on:
 		return
+	# if you are in the safe zone, spawning halts so they can be safe and sound
+	if Global.in_safe_zone == true:
+		return
 
 	# 2. The Ramp-Up Math
 	time_survived += delta

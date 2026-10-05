@@ -33,6 +33,8 @@
 [ext_resource type="PackedScene" uid="uid://dqr6tqmowv8gy" path="res://scenes/map.tscn" id="28_w3rk5"]
 [ext_resource type="PackedScene" uid="uid://ddmymlj4eeem5" path="res://scenes/pallet_4_box.tscn" id="30_5mvff"]
 [ext_resource type="PackedScene" uid="uid://c8yy63a34kfvs" path="res://scenes/laptop.tscn" id="30_oye8v"]
+[ext_resource type="Script" uid="uid://rj7dgt47w3x2" path="res://safe_zone.gd" id="34_sph85"]
+[ext_resource type="PackedScene" uid="uid://b5e2o2vgmwuxf" path="res://scenes/game_end_manager.tscn" id="35_o7g6l"]
 
 [sub_resource type="Environment" id="Environment_glv2v"]
 background_mode = 1
@@ -945,6 +947,7 @@ spot_angle = 62.842216
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=2028779112]
 transform = Transform3D(1, 0, 0, 0, 0.2979898, -0.95456886, 0, 0.95456886, 0.2979898, 0, 0, 0)
+visible = false
 
 [node name="THE SUN (temp)" type="DirectionalLight3D" parent="env" unique_id=1268182148]
 transform = Transform3D(1, 0, 0, 0, -0.1824227, 0.98322016, 0, -0.98322016, -0.1824227, 0, 72.99162, 55.173756)
@@ -1524,18 +1527,18 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.17
 script = ExtResource("6_lgr22")
 
 [node name="Anuc Cube" type="CSGBox3D" parent="Example enemy that reacts to gun" unique_id=1486441161]
-transform = Transform3D(-4.371139e-08, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -1, -4.371139e-08, -4.3711385e-08, -1.4901161e-08, -19.888012, -0.76258755)
+transform = Transform3D(-4.371139e-08, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -1, -4.371139e-08, -4.3711385e-08, 6.1804194, -19.888012, -0.76258767)
 size = Vector3(1, 0.10449219, 1)
 material = SubResource("StandardMaterial3D_37v28")
 
 [node name="Switch" parent="." unique_id=1811554746 instance=ExtResource("14_c2ibq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6083283, 1.5260547, -21.683308)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.03088, 2.310998, 40.71221)
 
 [node name="Switch2" parent="." unique_id=314594992 instance=ExtResource("14_c2ibq")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.14862281, 1.5260547, -23.441927)
 
 [node name="Switch3" parent="." unique_id=1622729204 instance=ExtResource("14_c2ibq")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.6383874, 1.5260547, -21.683308)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 61.154495, 2.0832777, 57.859436)
 
 [node name="SwitchManager" parent="." unique_id=198569349 node_paths=PackedStringArray("switches", "light") instance=ExtResource("15_j4qnp")]
 switches = [NodePath("../Switch"), NodePath("../Switch2"), NodePath("../Switch3")]
@@ -1543,9 +1546,13 @@ light = NodePath("../light/SpotLight3D")
 
 [node name="PauseMenu" parent="." unique_id=1320021373 instance=ExtResource("19_5tuhn")]
 
-[node name="Healing Area" type="Area3D" parent="." unique_id=2007816349]
+[node name="Safe Zone" type="Area3D" parent="." unique_id=2007816349 node_paths=PackedStringArray("hitpoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28330612, 0, -21.9012)
+script = ExtResource("34_sph85")
+hitpoints = NodePath("../GameEndManager")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Healing Area" unique_id=382858041]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Safe Zone" unique_id=382858041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25357056, 1.8710022, -0.81796265)
 shape = SubResource("BoxShape3D_si2nl")
+
+[node name="GameEndManager" parent="." unique_id=1815310578 instance=ExtResource("35_o7g6l")]
