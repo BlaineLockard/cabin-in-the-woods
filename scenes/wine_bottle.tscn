@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ckmv4sd4ri3ry"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdmg6b1sgpwll" path="res://assets/models/10873_WineBottle_L2_v1.obj" id="1_1falr"]
+[ext_resource type="Texture2D" uid="uid://dsrwwcnre2hw6" path="res://assets/textures/WineBottle.jpg" id="1_d22x0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rc3o7"]
+albedo_texture = ExtResource("1_d22x0")
+
+[node name="Wine_Bottle" type="Node3D" unique_id=175044070]
+
+[node name="Bottle" type="MeshInstance3D" parent="." unique_id=891882035]
+transform = Transform3D(0.025, 0, 0, 0, -1.0927848e-09, 0.025, 0, -0.025, -1.0927848e-09, 0.027021527, 0.006509304, -0.004054129)
+material_override = SubResource("StandardMaterial3D_rc3o7")
+mesh = ExtResource("1_1falr")

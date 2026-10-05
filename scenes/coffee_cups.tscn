@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cu72a0yfut8ox"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1eqktddvf4a1" path="res://assets/models/coffee cup.obj" id="1_kne7y"]
+
+[node name="Coffee_Cups" type="Node3D" unique_id=42109889]
+
+[node name="CoffeeCup" type="MeshInstance3D" parent="." unique_id=1000021251]
+transform = Transform3D(-0.02, 0, -2.832152e-06, 0, 0.02, 0, 2.832152e-06, 0, -0.02, 0.00033289194, -0.0006670356, -0.06912298)
+mesh = ExtResource("1_kne7y")

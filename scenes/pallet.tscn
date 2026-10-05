@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bku0sij2vt24d"]
+
+[ext_resource type="Texture2D" uid="uid://c4kntic6mxn8f" path="res://assets/textures/everytexture.com-stock-wood-tree-barkl-texture-00030.jpg" id="1_tc5wf"]
+[ext_resource type="ArrayMesh" uid="uid://ckgirs18viqq" path="res://assets/models/woodPallet.obj" id="2_kpbrv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhakx"]
+albedo_texture = ExtResource("1_tc5wf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uq2hj"]
+size = Vector3(50.974, 22.874, 41.029)
+
+[node name="Pallet" type="Node3D" unique_id=1535799940]
+
+[node name="WoodPallet3" type="MeshInstance3D" parent="." unique_id=757716442]
+transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.0013483763, 0.009814173, -0.0012283325)
+material_override = SubResource("StandardMaterial3D_dhakx")
+mesh = ExtResource("2_kpbrv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WoodPallet3" unique_id=371914488]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WoodPallet3/StaticBody3D" unique_id=953747137]
+transform = Transform3D(1.0000007, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, -0.5323181, 2.9486175, 0.286438)
+shape = SubResource("BoxShape3D_uq2hj")

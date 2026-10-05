@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bdsexa6nws3xw"]
+
+[ext_resource type="ArrayMesh" uid="uid://dpspoemquu0wa" path="res://assets/models/16582_5500W_Portable_Gas_Generator_v1.obj" id="1_5yxne"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5vnv"]
+size = Vector3(45.21574, 58.939545, 50.509354)
+
+[node name="Generator" type="Node3D" unique_id=1093208838]
+
+[node name="Placeholder_Generator2" type="MeshInstance3D" parent="." unique_id=680453962]
+transform = Transform3D(0.065, 0, 0, 0, -2.8412401e-09, 0.065, 0, -0.065, -2.8412401e-09, 0.0068798065, 0.005569756, 0.029072762)
+mesh = ExtResource("1_5yxne")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Placeholder_Generator2" unique_id=1196390714]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Placeholder_Generator2/StaticBody3D" unique_id=1818090577]
+transform = Transform3D(1, 0, 0, 0, 1, 2.1316282e-14, 0, -2.1316282e-14, 1, -0.5919192, -1.2440653, 24.584618)
+shape = SubResource("BoxShape3D_w5vnv")

@@ -790,7 +790,7 @@ size = Vector3(453.6572, 212.4206, 202.35953)
 [node name="Office_Desk" type="Node3D" unique_id=623966211]
 
 [node name="OfficeChair" type="MeshInstance3D" parent="." unique_id=901191733]
-transform = Transform3D(-0.0016054955, 0, -1.1671783e-10, 0, 0.0014409574, 0, 1.4035687e-10, 0, -0.0013350963, -0.0014970303, 0.00657174, 0.4936297)
+transform = Transform3D(-0.0016054955, 0, -1.1671783e-10, 0, 0.0014409574, 0, 1.4035687e-10, 0, -0.0013350963, 0.07927102, 0.00657174, 0.4936297)
 mesh = SubResource("ArrayMesh_i3jfm")
 surface_material_override/0 = SubResource("StandardMaterial3D_baxnn")
 surface_material_override/1 = SubResource("StandardMaterial3D_baxnn")

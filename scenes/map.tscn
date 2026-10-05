@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqr6tqmowv8gy"]
+
+[ext_resource type="Texture2D" uid="uid://dn6qu5qsbwffl" path="res://assets/textures/Screenshot 2026-09-28 092205.png" id="1_4xfga"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_paxxb"]
+albedo_texture = ExtResource("1_4xfga")
+uv1_scale = Vector3(2.73, 1.92, 2.535)
+uv1_offset = Vector3(0.14, 1.065, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4xfga"]
+size = Vector3(1.1, 0.025, 0.69384766)
+
+[node name="Map" type="Node3D" unique_id=128350748]
+
+[node name="Map" type="MeshInstance3D" parent="." unique_id=596263744]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.00047183037, 0.017351717, 0.0043530166)
+material_override = SubResource("StandardMaterial3D_paxxb")
+mesh = SubResource("BoxMesh_4xfga")
