@@ -36,4 +36,5 @@ func fatal_OS_error(message: String, header: String):
 	await safe_OS_message(message, header)
 	
 	# Instantly kill the game the moment they close the popup
-	OS.crash("Fatal error")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().quit(1)

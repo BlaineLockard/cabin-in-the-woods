@@ -3,11 +3,30 @@
 [ext_resource type="PackedScene" uid="uid://d23tiv4x6oyr3" path="res://scenes/enemy_base.tscn" id="1_cebeq"]
 [ext_resource type="Script" uid="uid://b5l10hhfqd5yf" path="res://scenes/scripts/don't_forget.gd" id="2_d6pf5"]
 [ext_resource type="Texture2D" uid="uid://dlrefyvguxhpc" path="res://assets/Sprites/IMG_8110.png" id="3_5cscc"]
-[ext_resource type="AudioStream" uid="uid://n04cjpsca4li" path="res://assets/Sounds/distorted-screaming-sound-39350.mp3" id="4_oldj8"]
-[ext_resource type="AudioStream" uid="uid://b2qjmorhn77nl" path="res://assets/Sounds/alesiadavina-ghostly-female-singing-voice-haunting-singsong-sfx-540772.mp3" id="5_g8hs8"]
+[ext_resource type="AudioStream" uid="uid://cq54dcji30248" path="res://assets/Sounds/doepfer-a-110-1-vco_triangle-66278.mp3" id="5_g8hs8"]
+[ext_resource type="Texture2D" uid="uid://brbqojm0pddyl" path="res://assets/Sprites/IMG_2270.png" id="6_g8hs8"]
+[ext_resource type="Texture2D" uid="uid://swtmeekc0sby" path="res://assets/Sprites/IMG_2271.png" id="7_7cf84"]
+[ext_resource type="Texture2D" uid="uid://plejyf5dtou8" path="res://assets/Sprites/IMG_2272.png" id="8_quso5"]
+[ext_resource type="Texture2D" uid="uid://dicc677uj1v8i" path="res://assets/Sprites/za_hando.png" id="9_fyaei"]
+[ext_resource type="Texture2D" uid="uid://dq353qry65dnu" path="res://assets/Sprites/IMG_2287.png" id="9_o3pv0"]
+[ext_resource type="Texture2D" uid="uid://cew5gtgsc4d28" path="res://assets/Sprites/IMG_2288.png" id="10_qtvau"]
+[ext_resource type="Texture2D" uid="uid://claojpmp5ilns" path="res://assets/Sprites/IMG_2286.png" id="11_vjf3y"]
+[ext_resource type="Texture2D" uid="uid://jj836sdmhyrk" path="res://assets/Sprites/IMG_2290.png" id="12_qb1cb"]
+[ext_resource type="Texture2D" uid="uid://c0sstpa7s5sdy" path="res://assets/Sprites/IMG_2289.png" id="13_0fqyu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tcv2a"]
 radius = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_4pa06"]
+frames = 4
+frame_0/texture = ExtResource("6_g8hs8")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("7_7cf84")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("8_quso5")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("7_7cf84")
+frame_3/duration = 0.2
 
 [node name="Don\'tForget" unique_id=1659994055 instance=ExtResource("1_cebeq")]
 collision_layer = 0
@@ -15,7 +34,6 @@ collision_mask = 0
 motion_mode = 1
 script = ExtResource("2_d6pf5")
 scare_image = ExtResource("3_5cscc")
-scare_sfx = ExtResource("4_oldj8")
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1007113563]
 shape = SubResource("CapsuleShape3D_tcv2a")
@@ -26,4 +44,134 @@ texture = ExtResource("3_5cscc")
 
 [node name="VoiceSound" type="AudioStreamPlayer" parent="." index="2" unique_id=343111194]
 stream = ExtResource("5_g8hs8")
-pitch_scale = 0.84
+volume_db = 20.129
+pitch_scale = 0.81
+parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=1148299707]
+layer = 100
+
+[node name="TheEyes" type="TextureRect" parent="CanvasLayer" index="0" unique_id=994826123]
+modulate = Color(1, 1, 1, 0.36078432)
+offset_top = -352.0
+offset_right = 1599.0
+offset_bottom = 1247.0
+texture = SubResource("AnimatedTexture_4pa06")
+
+[node name="REALEyes" type="TextureRect" parent="CanvasLayer" index="1" unique_id=1882177824]
+modulate = Color(0.98199993, 0.64, 1, 1)
+offset_left = 760.0
+offset_top = 414.0
+offset_right = 800.0
+offset_bottom = 454.0
+
+[node name="Eye2" type="TextureRect" parent="CanvasLayer/REALEyes" index="0" unique_id=1840781891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.0
+offset_top = -277.0
+offset_right = -63.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_o3pv0")
+expand_mode = 1
+
+[node name="Eye3" type="TextureRect" parent="CanvasLayer/REALEyes" index="1" unique_id=648629105]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.0
+offset_top = -277.0
+offset_right = -63.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qtvau")
+expand_mode = 1
+
+[node name="Eye" type="TextureRect" parent="CanvasLayer/REALEyes" index="2" unique_id=1001657892]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.0
+offset_top = -277.0
+offset_right = -63.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_vjf3y")
+expand_mode = 1
+
+[node name="OtherEye2" type="TextureRect" parent="CanvasLayer/REALEyes" index="3" unique_id=844932112]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 93.0
+offset_top = -277.0
+offset_right = 568.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_qb1cb")
+expand_mode = 1
+
+[node name="OtherEye3" type="TextureRect" parent="CanvasLayer/REALEyes" index="4" unique_id=1272620392]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 93.0
+offset_top = -277.0
+offset_right = 568.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qtvau")
+expand_mode = 1
+
+[node name="OtherEye" type="TextureRect" parent="CanvasLayer/REALEyes" index="5" unique_id=184039774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 109.0
+offset_top = -277.0
+offset_right = 584.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_0fqyu")
+expand_mode = 1
+
+[node name="TheHand" type="TextureRect" parent="CanvasLayer" index="2" unique_id=1840893686]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_fyaei")
+expand_mode = 1
